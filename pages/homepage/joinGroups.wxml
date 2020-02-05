@@ -1,0 +1,27 @@
+<!--pages/homepage/joinGroups.wxml-->
+<view class="container">
+  <view class="list">
+    <loading hidden="{{loadingHidden}}">
+      加载中...
+    </loading> 
+    <view class="list-item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" 
+      data-id="{{item.id}}" bindtap="goToDetailPage">
+      <image class="image" src="{{pictureHost + item.thumbnail}}" mode='widthFix'></image>
+      <view class='item-name'>
+        <text class="name">{{item.name}}</text>
+        <text class="introduce">{{item.introduced}}</text>
+        <view class="buttom-data">
+          <view style='width:50%;'>
+            <image class="image1" src="/images/icon/members.png" />
+            <text class="member">{{item.members}}</text>
+          </view>
+          <view style='width:50%;'>
+            <image class="image2" src="/images/icon/fans.png" />
+            <text class="member">{{item.fans}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

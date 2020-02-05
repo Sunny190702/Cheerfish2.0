@@ -1,0 +1,247 @@
+@import '/pages/user/index.wxss';
+.integral {
+  display: flex;
+  justify-content: flex-start;
+  height: 32rpx;
+  line-height: 32rpx;
+  min-width: 180rpx;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+.integral-text {
+  font-size: 12px;
+  /* color: #adc1d9; */
+  color: #fff;
+  padding-left: 20rpx;
+}
+
+.integral-number {
+  font-size: 12px;
+  /* color: #adc1d9; */
+  color: #fff;
+  padding-right: 20rpx;
+  padding-left: 5rpx;
+}
+.integral-blance {
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  font-size: 11px;
+  color: #fff;
+  margin-left: 20rpx;
+  background-color: #3378b8;
+  border-radius: 50%;
+  width: 36rpx;
+  height: 36rpx;
+  margin-top:-1rpx;
+}
+
+.my-info-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1rpx 1rpx 5rpx 1rpx #f5f5f5;
+  border-radius: 10rpx;
+  margin: 62px 30rpx 60rpx 30rpx;
+}
+.myinfo1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 22%;
+  height: 66px;
+  margin: 10px auto; 
+  border-radius: 10rpx;
+}
+.myrelease {
+  font-size: 12px;
+  color: #333;
+  font-weight: 500;
+  padding-top:7px;
+}
+
+.release-image {
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.setting-one {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+  margin-top: -25rpx;
+}
+
+.setting-item {
+  padding: 25rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 20px;
+}
+
+.setting-two {
+  display: flex;
+  flex-direction: column;
+  padding: 0 30rpx;
+}
+
+.item-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.item-button {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border-radius:0;
+  line-height: normal;
+}
+.item-button::after{
+  border: none;
+}
+.item-image {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.setting-text {
+  padding-left: 20rpx;
+  font-size: 14px;
+  color: #333333;
+  text-align: center;
+  line-height: 20px;
+}
+.name-accountlevel-box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 120rpx;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80rpx;
+}
+
+.author-grade {
+  height: 28rpx;
+  width: 40rpx;
+  /* flex-shrink: 0; */
+  margin-left: 8rpx;
+  /* position: absolute; */
+  /* top: 12px; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center;   */
+}
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.upload-content-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 36px 20px 15px 20px;
+}
+.name {
+  font-size: 14px;
+  color: #ffffff;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  display:-webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  justify-content: center;
+}
+.name-state {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+
+.banner-card{
+  background-color: #3088e0;
+  padding:30rpx 0;
+}
+.banner-card-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rpx;
+}
+.logo {
+  height: 180rpx;
+  width: 180rpx;
+  margin: 20rpx 25rpx;
+  flex-shrink: 0;
+  border-radius: 100%;
+  border:2px solid #ffffff;
+  align-self: center;
+}
+.banner-card-title {
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 500;
+}
+.info-button {
+  font-size: 12px;
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid #fff;
+  justify-content: center;
+}
+.info-card-button{
+  /* position: absolute; */
+  width:100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 36rpx 0 0 50rpx;  
+}
+
+.upload-content-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  z-index: 10;
+}
+.upload-content-info {
+  display: flex;
+  flex-direction: column;
+}
+.balance-icon {
+  width:12px;
+  height:12px;
+  align-self: center;
+}
+.upload-bg {
+  width: 73px;
+  height: 73px;
+  border-radius: 100%;
+  background-color: #fff;
+  align-self: center;
+  margin-top:30px;
+  margin-left:40px;
+}
+.background-image{
+  height : 100%;
+  position: absolute;
+  width: 92%;
+  left: 0px;
+  top: 0px;
+  padding: 13px 16px;
+}
+.vip-button {
+  width: 99px;
+  height: 27px;
+  margin: 1px 0 0 12px;
+}

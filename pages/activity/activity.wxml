@@ -1,0 +1,60 @@
+<import src="../template/template.wxml" />
+<!-- <import src="/pages/template/search/index.wxml" /> -->
+<view class="containers">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <!-- 增加引导页 -->
+  <introduce id="introduce" class="introduce" bindtap="showAddInfo" 
+  wx:if="{{showAddInfo}}"></introduce>        
+  <template is="new" data="{{type:'activity'}}"></template>
+  <!-- <template is="search-container" data="{{page: 'activity',  title: '活动'}}"></template> -->
+  <message id='notice'></message>
+  <search id='search' title="活动" page="activity"></search>
+  <view class="activity-list" style="margin-top: 180rpx;">
+    <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}"  bindtap="goToDetailPage" >
+      <view style="display:flex; flex-direction:row;">
+        <text class="title" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}"><text class="title-state" wx:if="{{item.topOrder == 1}}">精选</text>{{item.title}}</text>
+      </view>
+      <view class="item-top">
+        <image class="item-image"
+          src="{{pictureHost + item.pic}}">
+        </image>
+        <view class="item-desc">
+          <text class="source">主办单位：{{item.author}}</text>
+          <view class="analysis">
+            <text class="start-time">活动时间：{{item.start}}</text>
+            <!-- <text class="price">免费</text> -->
+          </view>
+          
+            <view class="icon-text">
+              <image class="icon-addr" src="/images/icon/addr.png"></image>
+              <text class="icon-number">{{item.address}}</text>
+              <!-- <image class="icon2" src="/images/img/share.png"></image> -->
+            </view>
+            <view class="item-icon">
+              <button class="button-state" id="{{item.id}}" 
+                style="{{item.isActive == '0' ? '':'display: none;'}}; " >已结束
+              </button> 
+            </view>
+          </view>
+      </view>
+      <view class="item-bottom">
+        <view class="author">
+          <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+          <text class="author-name">{{item.publisherInfo.name}}</text>
+          <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+        </view>
+
+        <view class="content">
+          <image class="content-image" src="/images/img/view.png"></image>
+          <text class="content-title">在看:</text>
+          <text class="content-time">{{item.hot}}</text>
+        </view>
+
+      </view>
+    <view class="dividing" style="margin:0 -30rpx;"></view>
+    </view>
+  </view>
+  <!-- <toast-component class="toast"></toast-component> -->
+</view>

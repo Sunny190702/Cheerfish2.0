@@ -1,0 +1,24 @@
+<!--pages/profile/static/owner.wxml-->
+<!-- <import src="../template/template.wxml" /> -->
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="upload">
+    <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>联系邮箱</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <view>
+          <text class="item-key">企业邮箱:</text>
+          <text class="item-value" bindtap='copyText'>service@hanstate.com</text>
+        </view>
+      </view>
+    </view>
+    <template is="gohome" class="button {{show ? 'show' : 'hidden'}}"></template>
+  </view>
+</view>

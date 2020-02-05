@@ -1,0 +1,48 @@
+<template name="title">
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>{{title}}</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+</template>
+<template name="new">
+  <view class="templata-box" data-type="{{type}}" bindtap="goToNewPage">
+    <view class="templata-position">
+      <image class="templata-position-image" src="/images/img/new.png"></image>
+    </view>
+  </view>
+</template>
+<template name="create">
+  <view class="templata-box" data-type="{{type}}" bindtap="goToNewPage"
+  style="bottom: 50px;">
+    <view class="templata-position">
+      <image class="templata-position-image" src="/images/img/new.png"></image>
+    </view>
+  </view>
+</template>
+<template name="join-wrap">
+  <view class="join-wrap">
+    <view class="join-wrap-head">
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+      <image class="join-wrap-image" src="/images/icon/dactivity.png"></image>
+    </view>
+    <view class="join-wrap-statistics">
+      <text class="join-wrap-statistics-text">已报名</text>
+      <view class="join-wrap-statistics-num">
+        <text class="apply-number">93</text>
+        <text class="total-number">/100</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name="gohome">
+  <view class="position-gohome" bindtap="gohome">
+    <image class="position-gohome-image" src="/images/icon/home.png"></image>
+  </view>
+</template>

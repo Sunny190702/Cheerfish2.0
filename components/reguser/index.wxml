@@ -1,0 +1,14 @@
+<view class="join-wrap">
+    <view class="join-wrap-head" data-id="{{itemId}}" data-type="{{type}}" data-identity="{{identity}}" bindtap="goToReguserPage">
+      <view  wx:for="{{users}}" wx:key="{{index}}" id="{{item.id}}">
+        <image class="join-wrap-image" src="{{pictureHost+item.userBaseInfo.header}}"></image>
+      </view>
+    </view>
+    <view class="join-wrap-statistics">
+      <text class="join-wrap-statistics-text">已报名</text>
+      <view class="join-wrap-statistics-num">
+        <text class="apply-number">{{regNum}}人</text>
+        <!-- <text class="total-number">/{{regNums}}</text> -->
+      </view>
+    </view>    
+</view>

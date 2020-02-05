@@ -1,0 +1,56 @@
+<!--components/modal/order.wxml-->
+<view class='mask' wx:if='{{show}}'>
+  <view class='modal-content' style='height:{{height}}'>
+    <!-- <scroll-view scroll-y class='main-content'> -->
+      <!-- <slot></slot> -->
+      <view class="title">
+        <text class="title-info">{{title}}课程预约咨询</text>
+        <text class="title-message">(* 请填写真实、完整信息有助于申请)</text>
+      </view>
+      <view class="course-detail-wrap">
+        <!-- <view class="detail-wrap"> -->
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>姓名
+            </label>
+
+            <input class='input' data-name='name' confirm-type="next" focus='{{focusInput}}' maxlength='20' placeholder="请输入真实姓名"  value="{{name}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>电话
+            </label>
+            <input class='input' data-name='phone' focus='{{focusInput}}' maxlength='20' confirm-type="next" placeholder="请输入手机号码" value="{{phone}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>单位
+            </label>
+            <input class='input' data-name='company' focus='{{focusInput}}' maxlength='50' confirm-type="next" placeholder="请输入单位名称" value="{{company}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>职务
+            </label>
+            <input class='input' data-name='position' focus='{{focusInput}}' maxlength='50' confirm-type="next" placeholder="请输入就职职务" value="{{position}}" auto-height='true' bindinput="bindinput"  />
+          </view>
+        <!-- </view> -->
+      </view>
+    <!-- </scroll-view> -->
+    <text class="title-info" style="font-size: 12px; padding-top:1px;padding-bottom:10px">主办方拥有最终解释权</text>
+
+    <!-- <view class="bottom-tip" name='isSetting'>
+      <image class="tip" src="{{isSetting ? '/images/icon/tipy.png' : '/images/icon/tipn.png'}}"></image>
+      <text class="tip1">订阅消息</text>
+      <text class="tip2">(订阅消息界面请勾选“总是”)</text>
+    </view>   -->
+
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' catchtap='cancel'>取消</view>
+      <view class='confirm-btn' style='color:#13b5f5' catchtap='confirm'>预约</view>
+    </view>
+  </view>
+</view>

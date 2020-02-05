@@ -1,0 +1,114 @@
+<import src="/pages/template/loading/index.wxml" />
+<view class="containers">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <!-- 增加引导页 -->
+  <introduce id="introduce" class="introduce" bindtap="showAddInfo" 
+  wx:if="{{showAddInfo}}"></introduce>          
+  <view>
+  <!-- <template is="loading" /> -->
+  </view>
+  <message id='notice'></message>
+  <search id='search' title="{{currentTab == '0' ? '找干将' : '找主公'}}" page="{{currentTab == '0' ? 'recruits' : 'seekers'}}"></search>
+  <view class="templata-box" data-type="{{currentTab}}" bindtap="goToNewPage">
+    <view class="templata-position">
+      <image class="templata-position-image" src="/images/img/new.png"></image>
+    </view>
+  </view>
+  <!-- <template is="new" data="{{currentTab}}"></template> -->
+  <view class="job-container">
+    <view class="job-tab">
+      <view class="swiper-tab">
+        <!-- button -->
+        <view
+          class="swiper-tab-item {{currentTab==0?'job1':'job2'}}"
+          data-current="0"
+          bindtap="clickTab"
+        >
+          找干将
+        </view>
+        <view
+          class="swiper-tab-item {{currentTab==1?'job1':'job2'}}"
+          data-current="1"
+          bindtap="clickTab"
+        >
+          找主公
+        </view>
+      </view>
+    </view>
+    <!-- item -->
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}" style="padding-top:100rpx;">
+      <view class="list">
+
+        <view class="item" wx:for="{{job1}}" wx:key="{{index}}"
+          id="{{item.id}}" bindtap="goToDetailPage" data-type="recruits" 
+          >
+          <view class="item-top">
+            <view class="position">
+              <text class="position-name" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">职位信息：{{item.position}}<text class="title-state" wx:if="{{item.topOrder == 1}}">精选</text></text>
+              <!-- <button class="position-join" id="{{item.id}}" catchtap="advisory"data-type='job1' data-phone="{{item.publisherInfo.phone}}" >联系</button> -->
+            </view>
+            <view class="source">
+              <text class="source-dep" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">单位名称：{{item.enterpriseName}}</text>
+              <!-- <text class="source-line">|</text>
+              <text class="source-author">主办方{{item.publisherInfo.school}}校友</text> -->
+            </view>       
+            <view class="source">
+              <text class="source-dep" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">发布时间：{{item.updatedAt}}</text>
+            </view>            
+          </view>
+          <view class="item-bottom">
+            <view class="author">
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="content">
+              <image class="content-image" src="/images/img/view.png"></image>
+              <text class="content-title">在看:</text>
+              <text class="content-time">{{item.hot}}</text>
+            </view>
+          </view>
+        <view class="dividing" style="margin: 0 -30rpx;"></view>
+
+        </view>
+      </view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}" style="padding-top:100rpx;">
+      <view class="list">
+        <view class="item" wx:for="{{job2}}" wx:key="{{index}}"
+          id="{{item.id}}" bindtap="goToDetailPage" data-type="seekers" >
+          <view class="item-top">
+            <view class="position">
+              <text class="position-name" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">求职意向：{{item.position}}<text class="title-state" wx:if="{{item.topOrder == 1}}">精选</text></text>
+              <!-- <button class="position-join" id="{{item.id}}" data-type='job2' catchtap="advisory" data-phone="{{item.publisherInfo.phone}}">联系</button> -->
+            </view>
+            <view class="source">
+              <text class="source-dep">{{item.title}}</text>
+              <!-- <text class="source-line">|</text>
+              <text class="source-author">主办方{{item.publisherInfo.school}}校友</text> -->
+            </view>
+            <view class="source">
+              <text class="source-dep" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">发布时间：{{item.updatedAt}}</text>
+            </view>             
+          </view>
+          <view class="item-bottom">
+            <view class="author">
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="content">
+              <image class="content-image" src="/images/img/view.png"></image>
+              <text class="content-title">在看:</text>
+              <text class="content-time">{{item.hot}}</text>
+            </view>
+          </view>
+        <view class="dividing" style="margin: 0 -30rpx;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <toast-component class="toast"></toast-component> -->
+</view>

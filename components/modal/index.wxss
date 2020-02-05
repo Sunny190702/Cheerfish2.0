@@ -1,0 +1,106 @@
+/* components/modal/index.wxss
+/* modal.wxss */
+.mask{
+ /* position: absolute; */
+ position: fixed;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: rgba(0,0,0,0.4);
+ z-index: 9999;
+}
+
+.modal-content{
+ display: flex;
+ flex-direction: column;
+ width: 90%;
+ background-color: #fff;
+ border-radius: 10rpx;
+}
+
+.modal-btn-wrapper{
+ display: flex;
+ flex-direction: row;
+ height: 100rpx;
+ line-height: 100rpx;
+ border-top: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.cancel-btn, .confirm-btn{
+ flex: 1;
+ height: 100rpx;
+ line-height: 100rpx;
+ text-align: center;
+ font-size: 32rpx;
+}
+
+.cancel-btn{
+ border-right: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.main-content{
+ /* flex: 1; */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ height: 100%;
+ overflow-y: hidden;
+
+}
+
+.textarea {
+  /* padding-top: 30rpx; */
+  color: #333333;
+  font-size: 14px;
+  height: 240rpx;
+  width: 100%;
+  border: 1px solid #eaeaea;
+  /* border-bottom: 0.1rpx solid #eaeaea; */
+  /* padding-left: 50rpx;
+  padding-top: 240rpx; */
+}
+
+.course-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 30rpx;
+}
+
+.detail-wrap {
+  display: flex;
+  flex-direction: column;
+  box-shadow:1px 1px 10px #ececef;
+  /* border-radius:10px; */
+  padding: 15rpx 30rpx;
+}
+.detail-item {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.item-key {
+  font-size: 14px;
+  padding:  15rpx 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+.item-value {
+  font-size: 14px;
+  padding:  15rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  color: #8c8c8c;
+}
+
+.auth {
+  padding: 30rpx 0;
+  align-self: left;
+  color: #a9a9a9;
+  font-size: 14px;
+}

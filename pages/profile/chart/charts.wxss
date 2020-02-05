@@ -1,0 +1,60 @@
+/* pages/profile/chart/charts.wxss */
+.swiper-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 30rpx;
+}
+.swiper-tab-item:first-child{
+  border-left: 1px solid #00519f;
+}
+.job-tab {
+  height: 90rpx;
+  background-color: #f7f7f7;
+}
+
+.job-container:last-child {
+  padding-bottom: 100rpx;
+}
+.dividing {
+  margin: 0 -30rpx;
+}
+.job1 {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  background-color: #00519f;
+  width: 50%;
+  text-align:center;
+  /* border-radius: 50px; */
+}
+.job2 {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #00519f;
+  font-size: 16px;
+  font-weight: 800;
+  /* background-color: #00519f; */
+  width: 50%;
+  text-align:center;
+  /* border-left: 1px solid #00519f; */
+  border-right: 1px solid #00519f;
+  border-top: 1px solid #00519f;
+  border-bottom: 1px solid #00519f;
+}
+
+.show{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 30rpx; */
+  flex-wrap: wrap;
+}
+.hidden{
+  display: none;
+}
+
+.card-none {
+  display: none;
+}

@@ -1,0 +1,6 @@
+/* pages/guide/index.wxss */
+.guide-view {
+  width: 100%;
+  background-color: #f00;
+  opacity:0.5;
+}

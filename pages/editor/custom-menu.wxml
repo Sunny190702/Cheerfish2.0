@@ -1,0 +1,64 @@
+<!--pages/editor/custom-menu.wxml-->
+<!-- <view class="container" style="padding: 0 30rpx;"> -->
+<view style="padding: 0 30rpx; height: 100%;width: 100%;display: flex;flex-direction: column;">
+
+  <form bindsubmit="handleSubmit" bindreset="formReset">
+    <!-- <scroll-view scroll-y  style="position: fixed; height:100%;width:90%"> -->
+      <view style="display:flex;flex-direction: column;">
+        <view class='label-item'>
+          <text class='label'>姓名</text> 
+        </view>
+        <view class='label-item'>
+          <text class='label'>电话</text> 
+        </view>      
+        <view class='label-item'>
+          <text class='label'>单位</text> 
+        </view>
+        <view class='label-item'>
+          <text class='label'>职务</text> 
+        </view>         
+      </view>
+
+      <view wx:for="{{list}}" wx:key="{{}}" id="{{item.id}}">
+        <view class="list-item-view">
+          <view>
+            <image class="delete" src="/images/icon/deleteb.png" catchtap="delete" data-idx="{{index}}"></image>
+          </view>
+          <view style="width:60%;">
+            <text class='label' name='label'>{{item.label}}</text>
+          </view>
+          <view bindtap="chooseMustOption" name='require' data-idx="{{index}}">
+            <text class='label'  data-idx="{{index}}">必填 </text>
+            <image class="tip" src="{{item.require ? '/images/icon/tipy.png' : '/images/icon/tipn.png'}}"  data-idx="{{index}}"></image>
+          </view>
+        </view>
+      </view>
+
+      <form bindsubmit="addCustomMenu" bindreset="formReset">
+        <view class="list-item-view" style="padding: 10rpx 0;" wx:if="{{showInput}}">
+          <input class='input' name='label' confirm-type="next" focus='{{focusInput}}' placeholder="请输入标签名称" focus="true"/>
+          <button class='input-btn' form-type='submit' >确定</button>
+        </view>
+
+        <view wx:for="{{selection_list}}" wx:key="{{index}}" id="{{item.id}}" name='selection' wx:if="{{showSelectionLabel}}">
+          <view class="list-item-view">
+              <input class='input' name='selectionKey' confirm-type="next" focus='{{focusInput}}'  data-idx="{{index}}" placeholder="选项{{index + 1}}" value="{{item.options}}" bindinput='bindSelectionLabelInput'/>
+          </view>
+        </view>
+
+        <button class='add-selection-btn' bindtap='addSelection' wx:if="{{showAddSelectionBtn}}">添加选项</button>
+      </form>    
+
+    <!-- </scroll-view> -->
+      <view class='btn-wrap'>
+        <view class="menu-btn-wrap" wx:if="{{showMenuButton}}">
+            <view class="menu-button" catchtap="chooseInput">文本</view>
+            <view class="menu-button" catchtap="chooseRadioButton">单选</view>
+            <view class="menu-button" catchtap="chooseMultipleSelection">多选</view>
+        </view>
+        <button class='submitbtn' form-type='submit'>确定</button>
+      </view>
+    <!-- </scroll-view> -->
+  </form>
+</view>
+

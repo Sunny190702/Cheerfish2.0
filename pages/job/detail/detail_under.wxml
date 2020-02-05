@@ -1,0 +1,107 @@
+<view class="container">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <view class="upload">
+    <image class="upload-image"  src='/images/default/ic_share.png' mode='widthFix'> </image>
+    <!-- <image class="upload-image" wx:if="{{item}}" src='{{pictureHost + item}}' mode='widthFix'> </image>
+    <image class="upload-image"  wx:else src='/images/default/ic_share.png' mode='widthFix'> </image> -->
+  </view>
+  <view class="detail-wrap-box" style="{{isRecruits ? '' : 'display: none;'}}">
+    <view class='upload-box'>
+        <text class="upload-box-title" >{{list.enterpriseName }}直招{{list.position}}</text>
+        <!-- <text class="upload-box-time">招聘单位： {{list.enterpriseName }}</text>  -->
+        <view>
+          <image class="upload-box-time-icon" src="/images/icon/time.png"></image>
+          <text class="upload-box-time">{{updatedAt }}</text> 
+        </view>
+        <view>
+          <image class="upload-box-hot-icon" src="/images/icon/hot.png"></image>
+          <text class="upload-box-time">{{list.hot}}</text> 
+        </view>  
+        <view>
+          <image class="upload-box-addr-icon" src="/images/icon/addr1.png"></image>
+          <text class="upload-box-time">{{list.jobAddress}}</text> 
+        </view>          
+   
+        <view class="upload-box-publisherInfo">
+          <image class="logo" wx:if="{{list.publisherInfo.header}}" src="{{pictureHost + list.publisherInfo.header}}">
+            </image>
+          <view class="tit">
+            <text class="title">{{list.publisherInfo.name}}</text>
+            <text class="name">{{list.publisherInfo.school}}</text>
+          </view>     
+        </view>    
+        
+    </view>
+  </view>
+
+  <view class="detail-wrap-box" style="{{isRecruits ? 'display: none;' : ''}}">
+    <view class='upload-box'>
+        <text class="upload-box-title" >{{list.position}}</text>
+        <view>
+          <image class="upload-box-time-icon" src="/images/icon/time.png"></image>
+          <text class="upload-box-time">{{updatedAt }}</text> 
+        </view>
+        <view>
+          <image class="upload-box-hot-icon" src="/images/icon/hot.png"></image>
+          <text class="upload-box-time">{{list.hot}}</text> 
+        </view>   
+        <view class="upload-box-publisherInfo">
+          <image class="logo" wx:if="{{list.publisherInfo.header}}" src="{{pictureHost + list.publisherInfo.header}}">
+            </image>
+          <view class="tit">
+            <text class="title">{{list.publisherInfo.name}}</text>
+            <text class="name">{{list.publisherInfo.school}}</text>
+          </view>     
+        </view>    
+        
+    </view>
+  </view>
+
+  <view class="dividing"></view>
+
+  <view class="templata-title" style="margin-top:15px;">
+    <image src="/images/img/left.png"></image>
+    <text>{{isRecruits ? '找干将详情' : '找主公详情'}}</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="detail-wrap-box">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text class="item-value">{{isRecruits ? list.jobDes : list.content}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="templata-title" style="margin-top:15px;">
+    <image src="/images/img/left.png"></image>
+    <text>联系方式</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="detail-wrap-box">
+    <view class="detail-wrap">
+      <view class="detail-item" wx:if="{{list.phoneNumber}}">
+        <text class="item-key" bindtap='callPhoneNumber' >电话：<text class="item-value"  style="width:60%">{{list.phoneNumber}}</text></text>
+        <image class="phone_image" src="/images/icon/call.jpg" 
+         bindtap='callPhoneNumber' wx:if='{{showcallIcon}}'></image>        
+      </view>
+      <view class="detail-item"  wx:if="{{list.emailAddr}}">
+        <text class="item-key" bindtap='copyText'> data-text='{{list.emailAddr}}'邮箱：<text class="item-value">{{list.emailAddr}}</text></text>
+      </view>      
+      <view class="detail-item" wx:if='{{list.wxId}}'>
+        <text class="item-key" decode="{{true}}" bindtap='copyText'   data-text='{{list.wxId}}'>微信：<text class="item-value">{{list.wxId}}</text></text>
+      </view>   
+    </view>
+  </view>
+
+  <view class="detail-wrap-box" style="padding-bottom:150rpx;">
+    <view style="padding-bottom:1rpx;padding-top:10rpx;">
+        <image class="assis-card-cover" wx:if="{{banner}}" src="{{pictureHost + banner}}" mode='widthFix'></image>
+        <image class="assis-card-cover" wx:else src="/images/default/cheerfish_info.jpg" mode='widthFix'></image>   
+    </view>      
+    <view class="auth">
+      <text >主办方拥有最终解释权</text>
+    </view>
+  </view>
+</view>

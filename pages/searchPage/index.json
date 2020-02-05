@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "搜索中心",
+  "usingComponents": {
+    "recruits": "/components/recruits/index",
+    "partner": "/components/partner/index",
+    "activity": "/components/activity/index",
+    "courses": "/components/courses/index",
+    "college": "/components/college/index",
+    "groups": "/components/groups/index"
+  }
+}

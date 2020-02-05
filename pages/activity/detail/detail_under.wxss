@@ -1,0 +1,32 @@
+/* pages/activity/detail/detail.wxss */
+@import "/pages/template/template.wxss";
+@import "/pages/activity/detail/detail.wxss";
+.course-card-image {
+  padding: 25rpx 0;
+}
+.course-card-tit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.item-value {
+  font-size: 14px;
+  padding:  15rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  color: #8c8c8c;
+}
+.college-card-title {
+  font-size: 14px;
+  color: #333333;
+}
+.college-card-name {
+  font-size: 12px;
+  color: #a7a7a7;
+  padding-top: 10rpx;
+}
+.icon-number {
+  font-size: 10px;
+  color: #999999;
+  padding-top: 10rpx;
+  padding-bottom: 30rpx;
+}

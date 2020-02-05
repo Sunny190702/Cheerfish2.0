@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="list">
+    <loading hidden="{{loadingHidden}}">
+      加载中...
+    </loading> 
+    <!-- <view class="upload">
+      <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+    </view> -->
+    <view class="setting-one" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}">
+      <view class="setting-item">
+        <view class="item-text">
+          <!-- <image class="item-image" src="{{pictureHost + item.userBaseInfo.header}}"></image> -->
+          <label>
+            <text class="setting-text">姓名：{{item.registerInfo.realName}}</text>
+            <text class="setting-text-position">{{item.registerInfo.position}}</text>
+          </label>
+          <text class="setting-text"  wx:if="{{master}}">电话：{{item.registerInfo.phone}}</text>
+          <text class="setting-text">单位：{{item.registerInfo.company}}</text>
+          <!-- <image class="user-icon" src="/images/user/user1.png"></image> -->
+          <!-- 自定义列表 -->
+          <view wx:for="{{customOptions[index]}}" wx:key="idx" id="{{item.id}}" wx:if="{{master}}">
+            <text class="setting-text" wx:if="{{item.values}}">{{item.label}}：{{item.values}}</text>
+          </view>   
+
+        </view>
+      </view>
+    </view>
+    <view class="dividing"></view>
+  </view>
+
+  <view class='btn-wrap'>
+    <button class='button' wx:if = "{{systemInfo == 'ios'}}" data-type='excel' bindtap='copyRefuserList'>复制已加载报名表</button>
+    <button class='button' wx:else  data-type='excel' bindtap='downloadRefuserList'>下载报名表</button>
+  </view>    
+
+</view>

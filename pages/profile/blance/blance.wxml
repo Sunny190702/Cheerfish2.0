@@ -1,0 +1,65 @@
+<!--pages/profile/blance/blance.wxml-->
+<view class="container">
+  <view class="container">
+    <view class="upload">
+       <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+    </view>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>Cheerfish鱼币规则</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text  decode="{{true}}" class="item-value">{{item}}</text>        
+        <!-- <text decode="{{true}}" class="item-value">
+     &emsp;&emsp;鱼币的多少一定程度上是衡量校友活跃程度、热心程度的标志。  
+     &emsp;&emsp;本规则生效日期：2019年9月10日，平台具有最终解释权，相关规则将依据具体情况进行更新。\n
+    一、如何获得鱼币
+    1.新用户注册即赠送200鱼币；
+    2.鱼币奖励规则：
+    （1）	发布奖励。
+    &emsp;A．	活动发布奖励。每成功发布活动1次，奖励50鱼币 / 次；
+    &emsp;B．	招聘发布奖励。每成功发布招聘1次，奖励25鱼币 / 次；
+    &emsp;C．	求职发布奖励。每成功发布求职1次，奖励25鱼币 / 次；
+    &emsp;D．	合作发布奖励。每成功发布合作1次，奖励25鱼币 / 次；
+    （2）	邀请奖励。   
+    &emsp;&emsp;邀请他人注册，邀请人每成功邀请注册成功1人，奖励50鱼币。鱼币以被邀请人注册时正确填写邀请人手机号为准。\n
+    二、鱼币消耗方式
+    1.置顶消耗
+    &emsp;&emsp;对于发布的活动、招聘、求职、合作等信息，可选择置顶，每置顶一次，消耗100鱼币。置顶的信息，平台将给予重点推广。
+    2.奖品兑换消耗
+    &emsp;&emsp;平台将不定期举办鱼币兑换奖品活动，具体鱼币兑换规则将以届时详细兑换要求为准。
+    3.其他消耗
+    &emsp;&emsp;依据届时具体其他消耗规则为准。\n\n</text> -->
+      </view> 
+    </view>
+    <view class="auth">
+      <text>平台拥有最终解释权</text>
+    </view>
+
+
+
+ <!-- <view>
+    <text decode="{{true}}">你好&ensp;啊&ensp;&ensp;&ensp;哈哈哈（空格是中文字符一半大小）</text>
+</view>
+<view>
+    <text decode="{{true}}">你好&emsp;啊&emsp;&emsp;&emsp;哈哈哈（空格是中文字符大小）</text>
+</view>
+<view>
+    <text decode="{{true}}">你好&nbsp;啊&nbsp;&nbsp;&nbsp;哈哈哈（空格根据字体设置）</text>
+</view>
+<view>
+    <text space="ensp">你好 啊      哈哈哈（空格是中文字符一半大小）</text>
+</view>
+<view>
+    <text space="emsp">你好 啊      哈哈哈（空格是中文字符大小）</text>
+</view>
+<view>
+    <text space="nbsp">你好 啊      哈哈哈（空格根据字体设置）</text>
+</view> -->
+
+  </view>
+</view>

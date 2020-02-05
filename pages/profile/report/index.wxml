@@ -1,0 +1,29 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="job-container">
+    <view>
+      <view class="none-wrap" style="{{reports.length < 1 ? '':'display: none;'}}">
+        <image class="none-image" src="/images/img/none.png"> </image>
+        <text class="none-test">还没有添加举报哦~~</text>
+      </view>
+      <view class="partner-list" style="flex-grow: 1;" wx:for="{{reports}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToReportsPage">
+        <view class="partner-item">
+          <view class="partner-item-top">
+            <view class="partner-position">
+              <text class="partner-position-name">举报内容: {{item.content}}</text>
+              <!-- <button class="partner-position-join">{{item.itemType ? item.item.Type : '没给'}}</button> -->
+            </view>
+            <view class="partner-source">
+              <!-- <text class="partner-source-dep">举报类型: {{item.type == '0' ? '虚假信息' : '违法信息'}}</text> -->
+              <text class="partner-source-author">举报对象: {{item.title}}</text>
+              <text class="partner-source-author" wx:if='{{item.result == 0}}'>举报进度: 处理中</text>
+              <text class="partner-source-author" wx:elif='{{item.result == 1}}'>举报进度: 举报无效</text>
+              <text class="partner-source-author" wx:elif='{{item.result == 2}}'>举报进度: 举报成功</text>
+            </view>
+          </view>
+        </view>
+        <view class="dividing"></view>
+      </view>
+    </view>
+  </view>
+</view>

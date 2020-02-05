@@ -1,0 +1,9 @@
+<!--components/introduce/introduce.wxml-->
+<view class="guide-view"  wx:if="{{show}}">
+    <image src='/images/default/in_bg.png' style='height: 100%;width: 100%;'></image>
+  <view style='position:relative;display: flex;flex-direction: row; justify-content: flex-start;'>
+    <text class='guide-view-text1'>点击</text>
+    <image class='guide-view-image' src='/images/icon/home.png' style='height: 80rpx;width: 80rpx;'></image>
+    <text class='guide-view-text2'>进入启动界面</text>
+  </view>
+</view>

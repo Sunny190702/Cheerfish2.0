@@ -1,0 +1,7 @@
+@import "/pages/template/template.wxss";
+@import "/pages/partner/detail/detail.wxss";
+.item-info-author-icon {
+  height: 22rpx;
+  width: 20rpx;
+  padding-top: 5rpx;
+}

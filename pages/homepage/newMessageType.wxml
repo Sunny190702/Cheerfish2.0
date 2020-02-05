@@ -1,0 +1,30 @@
+<!--pages/homepage/newMessageType.wxml-->
+<view class="container">
+    <view class="setting">
+      <view class="setting-item" bindtap="goToActivityNewPage">
+        <view class="item-text">
+          <image class="item-image" src="/images/menuicon/activityy.png"></image>
+          <text class="setting-text">活动</text>
+        </view>
+      </view>
+      <view class="setting-item" bindtap="goToJobNewPage">
+        <view class="item-text">
+          <image class="item-image" src="/images/menuicon/joby.png"></image>
+          <text class="setting-text">招聘</text>
+        </view>
+      </view>      
+      <view class="setting-item" bindtap="goToJobNewPage2">
+        <view class="item-text">
+          <image class="item-image" src="/images/menuicon/joby.png"></image>
+          <text class="setting-text">求职</text>
+        </view>
+      </view>
+      <view class="setting-item" bindtap="goToPartnerNewPage">
+        <view class="item-text">
+          <image class="item-image" src="/images/menuicon/partnery.png"></image>
+          <text class="setting-text">合作</text>
+        </view>
+      </view>
+    </view>
+</view>
+

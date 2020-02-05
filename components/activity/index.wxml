@@ -1,0 +1,55 @@
+<view class="containers">
+  <view class="list">
+    <view class="none-wrap" style="{{list.length < 1 ? '':'display: none;'}}">
+      <image class="none-image" src="/images/img/none.png"> </image>
+      <text class="none-test">还没有添加哦~~</text>
+    </view>
+    <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}"  bindtap="goToDetailPage">
+      <view>
+        <text class="title">{{item.title}}</text>
+      </view>
+      <view class="item-top">
+        <image class="item-image" 
+          src="{{pictureHost + item.pic}}">
+        </image>
+        <view class="item-desc">
+            <view class="item-info">
+              <image class="item-info-author-icon" src="/images/icon/author.png"></image>
+              <text class="item-info-text">{{item.author}}</text>
+            </view>
+            <view class="item-info">
+              <image class="item-info-time-icon" src="/images/icon/time.png"></image>
+              <text class="item-info-text">{{item.start}}</text>
+            </view>           
+            <view class="item-info">
+              <image class="item-info-addr-icon" src="/images/icon/addr1.png"></image>
+              <text class="item-info-text">{{item.address}}</text>
+            </view>
+            <view class="item-info">
+              <image class="item-info-hot-icon" src="/images/icon/hot.png"></image>
+              <text class="item-info-text">{{item.hot}}</text>
+            </view>   
+          </view>
+      </view>
+      <view class="item-bottom">
+        <view class="author" wx:if="{{show == 0}}">
+          <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+          <text class="author-name">{{item.publisherInfo.name}}</text>
+          <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+        </view>
+
+        <view class="state-button-view" wx:if="{{show == 1}}">
+          <button class="state-button" id="{{item.id}}" 
+            style="{{item.isActive == '0' ? '':'display: none;'}}; " >已结束
+          </button>         
+          <text class="state" wx:if='{{item.state == 0}}'>审核中</text>
+          <text class="state" wx:elif='{{item.state == 1}}'>已发布</text>
+          <text class="state" wx:elif='{{item.state == 2}}'>未发布</text>
+          <text class="state" wx:elif='{{item.state == 3}}'>审核未通过</text>
+          <text class="state" wx:elif='{{item.state == 4}}'>违规信息</text>     
+        </view>
+      </view>
+    <view class="dividing" style="margin:0 -30rpx;"></view>
+    </view>
+  </view>
+</view>

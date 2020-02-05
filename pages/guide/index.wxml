@@ -1,0 +1,10 @@
+<!--pages/guide/index.wxml-->
+<view  class="containers" style="background-color:#0f0;">
+  <view>
+    <text>点击转发分享</text>
+  </view>
+
+  <view class="guide-view">
+    <text>授权并注册后可以收藏、举报、查看联系信息</text>
+  </view>
+</view>

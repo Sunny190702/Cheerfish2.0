@@ -1,0 +1,196 @@
+@import "/pages/template/template.wxss";
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width:100vw;
+  align-items: center;
+  height: 100vw * 16 /9;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.upload-image{
+  width:100vw;
+  height: 100vw * 16 /9;
+}
+
+.course-card {
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card-image {
+  padding: 20rpx 0;
+}
+.course-card-cover {
+  height: 400rpx;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.course-card-tit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tit-title {
+  font-size: 14px;
+  color: #333333;
+}
+
+.tit-label {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20rpx 0;
+}
+
+.label-view {
+  display: flex;
+  align-items: center;
+  height: 45rpx;
+  line-height: 45rpx;
+  background-color: #02d7cf;
+  margin-right: 20rpx;
+  border-radius: 25px;
+}
+.course-label {
+  font-size: 12px;
+  color: #ffffff;
+  padding: 0 20rpx;
+}
+
+.tit-address {
+  font-size: 12px;
+  color: #999999;
+  padding-bottom: 40rpx;
+}
+
+
+.collect-text {
+  padding-left: 10rpx;
+  font-size: 14px;
+  color: #999999;
+}
+
+.course-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 30rpx 135rpx 30rpx;
+}
+
+/* .course-detail-wrap text {
+  font-size: 14px;
+  padding:  15rpx 0;
+} */
+.detail-wrap {
+  display: flex;
+  flex-direction: column;
+  box-shadow:1px 1px 10px #ececef;
+  border-radius:10px;
+  padding: 15rpx 30rpx;
+}
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.item-key {
+  font-size: 14px;
+  padding:  15rpx 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+.item-value {
+  font-size: 14px;
+  padding:  15rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  /* color: #8c8c8c; */
+  color:#333333;
+}
+
+.auth {
+  padding: 50rpx 0 30rpx 0;
+  align-self: center;
+  color: #a9a9a9;
+  font-size: 14px;
+}
+
+.college-card-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #e4e4e4; */
+  padding-bottom: 30rpx;
+}
+
+.college-card-card1 {
+  display: flex;
+  justify-content: flex-start;
+  /* flex-grow: 1; */
+  flex-shrink: 0;
+}
+
+.college-card-logo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.college-card-tit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 10rpx;
+}
+
+.college-card-title {
+  font-size: 14px;
+  color: #333333;
+}
+.college-card-name {
+  font-size: 12px;
+  color: #a7a7a7;
+  padding-top: 10rpx;
+}
+
+.college-card-share {
+  padding-left: 10rpx;
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+}
+
+.tit-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size:12px;
+  color:#999999;
+  padding-bottom:30rpx;
+}
+.course-address {
+  padding-top: 10rpx;
+}
+
+.button {
+  margin: 0;
+  padding: 15rpx 30rpx ;
+  background-color: #0178dd;
+  border-radius:10;
+  line-height: normal;
+  font-size: 12px;
+  text-align: center;
+  color:#fff;
+}
+.button::after{
+  border: none;
+}
+
+.button hidden {
+  display: none
+}

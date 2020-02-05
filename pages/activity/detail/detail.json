@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "活动详情",
+  "usingComponents": {
+    "modal": "/components/modal/index",
+    "reguser": "/components/reguser/index",
+    "toast-component": "/components/toast/toast",
+    "joinmodal": "/components/modal/join",
+    "introduce": "/components/introduce/introduce"
+  }
+}

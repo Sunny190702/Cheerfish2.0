@@ -1,0 +1,253 @@
+/* components/modal/join.wxss */
+/* modal.wxss */
+.mask{
+ /* position: absolute; */
+ position: fixed;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: rgba(0,0,0,0.4);
+ z-index: 9999;
+}
+
+.modal-content{
+ display: flex;
+ flex-direction: column;
+ width: 90%;
+ background-color: #fff;
+ border-radius: 10rpx;
+}
+
+.modal-btn-wrapper{
+ display: flex;
+ flex-direction: row;
+ height: 100rpx;
+ line-height: 100rpx;
+ border-top: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.cancel-btn, .confirm-btn{
+ flex: 1;
+ height: 100rpx;
+ line-height: 100rpx;
+ text-align: center;
+ font-size: 32rpx;
+ background-color: #fff;
+}
+
+.cancel-btn{
+ border-right: 2rpx solid rgba(7,17,27,0.1);
+}
+
+.main-content{
+ /* flex: 1; */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ height: 100%;
+ overflow-y: hidden;
+}
+
+.course-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* height: 100%; */
+  /* padding: 30rpx; */
+  /* margin-top:100px; */
+}
+
+.detail-wrap {
+  display: flex;
+  flex-direction: column;
+  box-shadow:1px 1px 10px #ececef;
+  /* border-radius:10px; */
+  padding: 15rpx 30rpx;
+}
+.detail-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.item-key {
+  font-size: 14px;
+  padding:  15rpx 0;
+  color: #333333;
+  font-weight: 600;
+}
+
+.item-value {
+  font-size: 14px;
+  padding:  15rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  color: #8c8c8c;
+}
+
+.auth {
+  padding: 30rpx 0;
+  align-self: left;
+  color: #a9a9a9;
+  font-size: 14px;
+}
+
+.title {
+   display: flex;
+   flex:1;
+   height: 100px;
+   flex-direction: column;
+   padding-top: 20px;
+   /* padding-bottom: 0px; */
+   /* background-color: #ff0; */
+}
+
+.title-info {
+  text-align: center;
+  font-size: 16 px;
+  color:#000;
+  font-weight: 500;
+  padding:1px 10px;
+}
+
+.title-message {
+  text-align: center;
+  font-size: 12px;
+  color:#f00;
+  padding-top:1px;
+}
+
+.label {
+  font-size: 16px;
+  color: #333333;
+  width: 22%;
+  /* font-weight: 500; */
+}
+.star {
+  color: red;
+  padding-right: 15rpx;
+}
+.input {
+  padding-left: 10rpx;
+  color: #333333;
+  flex-grow: 1;
+  font-size: 16px;
+}
+.item {
+  display: flex;
+  padding: 30rpx 10rpx;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 0.1rpx solid #eaeaea;
+  /* background-color: #f00; */
+  width: 95%;
+  padding-left:40rpx;
+  min-height: 50px;
+}
+.custom-item {
+  display: flex;
+  padding: 30rpx 10rpx;
+  justify-content: flex-start;
+  border-bottom: 0.1rpx solid #eaeaea;
+  width: 95%;
+  padding-left:40rpx;
+  min-height: 50px;
+  flex-direction: column;
+}
+.custom-label {
+  font-size: 16px;
+  color: #333333;
+  width: 95%;
+  /* font-weight: 500; */
+}
+.custom-input {
+  /* margin-top:20px;
+  padding: 10rpx 10rpx;
+  color: #333333;
+  flex-grow: 1;
+  font-size: 16px;
+  width: 95%;
+  border: 1rpx solid #0178dd;
+  height:60px; */
+  color: #333333;
+  font-size: 14px;
+  height: 240rpx;
+  width: 100%;
+  border: 1px solid #eaeaea;    
+}
+
+
+.radio {
+  color: #333333;
+  flex-grow: 1;
+  font-size: 14px;
+  width:95%;
+  display: flex;
+  flex-direction: row;
+  padding:0 10rpx;
+  padding-top:20px;
+  align-items: center;
+}
+radio .wx-radio-input{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;
+   height: 40rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: red;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:red; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+
+
+.checkbox {
+  color: #333333;
+  flex-grow: 1;
+  font-size: 14px;
+  width:95%;
+  display: flex;
+  flex-direction: row;
+  padding:0 10rpx;
+  padding-top:20px;
+  align-items: center;
+}
+
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx; /* 背景的宽 */
+   height: 40rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: none;
+   background: red;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}

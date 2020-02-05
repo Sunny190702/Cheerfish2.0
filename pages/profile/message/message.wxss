@@ -1,0 +1,2 @@
+/* pages/profile/message/message.wxss */
+@import "../profile.wxss";

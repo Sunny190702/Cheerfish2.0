@@ -1,0 +1,95 @@
+/* pages/activity/new/content.wxss */
+.textarea {
+  width: 100%;
+  padding-top: 10rpx;
+  color: #333333;
+  font-size: 14px;
+  min-height: 50px;
+}
+
+
+.upload-pic {
+  height: 430rpx;
+  width: 100%;
+}
+
+.btn-wrap {
+  width: 100%;
+  margin: 0px;
+  padding: 20rpx 0 100rpx 0;
+}
+
+.submitbtn {
+  color: #ffffff;
+  font-size: 30rpx;
+  background: #0178dd;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50px;
+  /* padding-bottom:50rpx; */
+  position: fixed;
+  bottom:10px;
+  width: 100%;
+}
+
+
+
+.weui-uploader__input-box{  
+    float:left;
+    position:relative;
+    margin-right:9px;
+    margin-bottom:9px;
+    width:77px;
+    height:77px;
+    border:1px solid #d9d9d9   
+  }
+  .weui-uploader__input-box:after,
+  .weui-uploader__input-box:before{  
+    content:" ";
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);background-color:#d9d9d9   
+  }
+  .weui-uploader__input-box:before{  
+    width:2px;
+    height:39.5px   
+  }
+  .weui-uploader__input-box:after{  
+    width:39.5px;
+    height:2px   
+  }
+  .weui-uploader__input-box:active{  
+    border-color:#999   
+  }
+  .weui-uploader__input-box:active:after,
+  .weui-uploader__input-box:active:before{  
+    background-color:#999   
+  }
+  .weui-uploader__input{  
+    position:absolute;
+    z-index:1;top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0   
+  }
+  .weui-uploader__hd{ 
+     display:-webkit-box;
+     display:-webkit-flex;
+     display:flex;
+     padding-bottom:10px;
+     -webkit-box-align:center;
+     -webkit-align-items:center;
+     align-items:center;
+  }
+  .weui-uploader__title{  
+    /* -webkit-box-flex:1;
+    -webkit-flex:1;
+    flex:1; */
+    padding-right:10rpx;
+  }
+  .weui-uploader__info{ 
+     color:#b2b2b2   
+  }  

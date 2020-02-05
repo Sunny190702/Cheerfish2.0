@@ -1,0 +1,16 @@
+@import "../template/template.wxss";
+@import '/pages/template/search/index.wxss';
+@import '/pages/job/job.wxss';
+
+.item-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 20rpx;
+  padding-top:10rpx;
+}
+.title {
+  font-size: 14px;
+  color: #333333;
+}

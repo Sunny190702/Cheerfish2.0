@@ -1,0 +1,51 @@
+<!--pages/homepage/audits.wxml-->
+<view class="container">
+  <view class="group-info">
+    <loading hidden="{{loadingHidden}}" style="">
+      加载中...
+    </loading>    
+  </view>
+  <import src="/pages/template/template.wxml" />
+  <template is="gohome"></template>
+
+  <view class='listbox'>
+    <view class='list'>
+        <view class="none-wrap" style="{{list.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text class="none-test">没有需要审核的信息哦~~</text>
+        </view>
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.infoId}}" 
+          data-type='{{item.category}}' bindtap="goToDetailPage" >
+          <view class="item-info">
+            <view>
+              <view class="item-title">
+                <text class="item-title-info">{{item.title}}</text>
+              </view>    
+            </view>      
+            <view class="item-info-type">
+              <image class="item-image" wx:if="{{pic}}" src='{{pictureHost + pic}}' mode='widthFix'> </image>
+              <text class="item-type" wx:if='{{item.category == 1}}'>活动</text>
+              <text class="item-type" wx:elif='{{item.category == 2}}'>招聘</text>
+              <text class="item-type" wx:elif='{{item.category == 3}}'>求职</text>
+              <text class="item-type" wx:else='{{item.category == 4}}'>合作</text>
+            </view>
+          </view>          
+          <view class="item-bottom">
+            <view class="author">
+              <image class="author-avatar" src="{{pictureHost + item.userHeader}}"></image>
+              <text class="author-name">{{item.userName}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="result-card">
+              <button catchtap='bindAudits' data-id="{{item.infoId}}" data-result="1"
+              data-type="{{item.category}}">通过</button>
+              <button catchtap='bindAudits' data-id="{{item.infoId}}" data-result="2"
+              data-type="{{item.category}}">驳回</button>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <view class="dividing"></view>
+</view>

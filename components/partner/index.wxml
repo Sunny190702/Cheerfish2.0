@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="partner-container">
+    <view class="list">
+      <view class="card" >
+        <view class="none-wrap" style="{{list.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text class="none-test">还没有添加哦~~</text>
+        </view>
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToDetailPage">
+
+          <view class="item-top">
+            <view class='item-info'>
+              <text class="item-info-text">合作主题： {{item.enterpriseName}}</text>
+              <!-- <view class="delete-wrap">
+                  <image class="delete" src="/images/icon/deleteb.png" id="{{item.id}}" style="{{show == '0' ? 'display: none;' : ''}}" catchtap="delete"></image>
+              </view> -->
+            </view>
+            <view class='item-info'>
+              <text class="item-info-text">合作类别： <text wx:if='{{item.type == 0}}'>找资金</text>
+                  <text wx:elif='{{item.type == 1}}'>找项目</text>
+                  <text wx:elif='{{item.type == 2}}'>找人</text>
+                  <text wx:else='{{item.type == 3}}'>其他合作</text>
+              </text>
+            </view>
+            <view class="item-info">
+              <image class="item-info-time-icon" src="/images/icon/time.png"></image>
+              <text class="item-info-text">{{item.updatedAt}}</text>
+            </view>     
+            <view class="item-info">
+              <image class="item-info-hot-icon" src="/images/icon/hot.png"></image>
+              <text class="item-info-text">{{item.hot}}</text>
+            </view>  
+          </view>
+          <view class="item-bottom">
+            <view class="author" wx:if="{{show == 0}}">
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="state-button-view" wx:if="{{show == 1}}" style="padding-right:26rpx;">       
+              <text class="state" wx:if='{{item.state == 0}}'>审核中</text>
+              <text class="state" wx:elif='{{item.state == 1}}'>已发布</text>
+              <text class="state" wx:elif='{{item.state == 2}}'>未发布</text>
+              <text class="state" wx:elif='{{item.state == 3}}'>审核未通过</text>
+              <text class="state" wx:elif='{{item.state == 4}}'>违规信息</text>     
+            </view>
+          </view>
+
+          <view class="dividing" style="margin: 0 -30rpx;"></view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

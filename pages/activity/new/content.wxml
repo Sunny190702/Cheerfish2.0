@@ -1,0 +1,29 @@
+<!--pages/activity/new/content.wxml-->
+<view class="container">
+  <form bindsubmit="handleSubmit" bindreset="formReset">
+    <textarea class='textarea' name='msgcontent' maxlength='5000' placeholder='点击输入内容' placeholder-style='color: #333333' auto-height='true'>{{contentMsg}}</textarea> 
+
+    <view wx:for="{{dataList}}" wx:key="*this" id="{{item.id}}">
+      <image class="upload-pic" name='picture{{index}}' src="{{item.picture}}" bindtap="uploadimg" mode='widthFix' value="{{item.picture}}"></image>
+      <textarea class='textarea' name='content{{index}}' maxlength='1000' placeholder='点击输入内容' placeholder-style='color: #333333' auto-height='true' data-idx="{{index}}"  bindinput='expInput' value="{{item.content}}">{{item.content}}</textarea>   
+      <view>
+        <button bindtap='removeImage' data-idx="{{index}}">删除图片 </button>
+        <button bindtap='updatePicture' data-idx="{{index}}">更新图片 </button>
+      </view>
+    </view>
+
+    <view style="display:flex;flex-direction: column;">
+      <view class="weui-uploader__input-box">
+        <view class="weui-uploader__input" bindtap="chooseImage"></view>
+      </view>
+      <view class="weui-uploader__hd">
+          <view class="weui-uploader__title">图片上传</view>
+          <view class="weui-uploader__info">{{dataList.length > 0 ? dataList.length : 0}}/9</view>
+      </view>    
+    </view>
+
+    <view class='btn-wrap'>
+      <button class='submitbtn' form-type='submit'>确定</button>
+    </view>
+  </form>
+</view>

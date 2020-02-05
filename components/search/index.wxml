@@ -1,0 +1,10 @@
+<view name="search-container">
+  <view class="search-container">
+    <image class="search-logo" mode="scaleToFill" src="/images/navbar/logo.png"></image>
+    <view class="search-input" data-page="{{page}}" bindtap="goToSearchPage">
+      <image class="search-icon" src="/images/navbar/search1.png"></image>
+      <text >搜索{{title}}</text>
+    </view>
+    <text class="search-text">搜索</text>
+  </view>
+</view>

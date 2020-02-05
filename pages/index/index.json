@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "toast-component": "/components/toast/toast"
+  },
+  "navigationBarTitleText": "Cheerfish"
+}

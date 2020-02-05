@@ -1,0 +1,117 @@
+<!--pages/homepage/home.wxml-->
+<import src="../template/template.wxml" />
+<view class="container">
+  <view class="group-info">
+    <loading hidden="{{loadingHidden}}" style="">
+      加载中...
+    </loading>    
+    <template is="create"></template>
+    <view class="image-parent">
+      <image class='image' mode='scaleToFill' src="{{pictureHost+ thumbnail}}"></image>
+      <view class="info-box">
+        <view class="group-info-card-wrap">
+          <image class='logo' src="{{pictureHost+ thumbnail}}"></image>
+          <view class="group-info-card-view">
+            <text class="group-info-card-title">{{name}}</text>
+            <view style="flex-direction: column;margin-top: 8px;">
+              <image style="width:21rpx;height:20rpx;" src="/images/icon/membersd.png" />
+              <text class="group-info-card-info" style="padding-left:20rpx;" bindtap='goToMemberList'>{{members}}</text>
+              <image style="width:23rpx;height:20rpx;padding-left:70px;"  src="/images/icon/fansd.png" />
+              <text class="group-info-card-info" style="padding-left:20rpx;">{{fans}}</text>
+            </view>
+          </view>
+        </view>
+      </view>    
+      <view class='group-audits-card' style='justify-content:center;'> 
+          <button class="info-button" bindtap='bindSetting' wx:if="{{member}}">设置</button>
+      </view>      
+      <image  class="image-bg" src="/images/img/homebg.png" mode='widthFix' />
+    </view>     
+    <view class='info-message-card'>
+        <button class="info-message-button" bindtap='bindFollowGroup'>
+          <text wx:if="{{follow}}">已关注</text>
+          <text wx:else>关注</text>
+        </button>
+        <button open-type="share" class="info-message-button">
+          <text class="group-info-card-text">邀请</text>
+        </button>       
+        <button class="info-message-button" bindtap='bindJoinGroup'>
+          <text wx:if="{{member}}">已加入</text>
+          <text wx:else>加入</text>
+        </button>             
+    </view>  
+    <!-- <view class='info-card'>
+      <view class="group-info-card-wrap">
+        <image class='logo' src="{{pictureHost+ thumbnail}}" mode='widthFix'></image>
+        <text class="group-info-card-title">{{name}}</text>
+        <view style="flex-direction: column;margin-top: 8px;">
+          <text class="group-info-card-info" bindtap='goToMemberList'>现有成员: {{members}}</text>
+          <text class="group-info-card-info" style="padding-left:70px;">粉丝: {{fans}}</text>
+        </view>
+      </view>
+      <view class='group-audits-card' style='justify-content:center;'> 
+          <button class="info-button" bindtap='bindSetting' wx:if="{{member}}">设置</button>
+      </view>      
+ 
+      <view class='info-message-card'>
+        <button class="info-message-button" bindtap='bindFollowGroup'>
+          <text wx:if="{{follow}}">已关注</text>
+          <text wx:else>关注</text>
+        </button>
+        <button open-type="share" class="info-message-button">
+          <text class="group-info-card-text">邀请</text>
+        </button>       
+        <button class="info-message-button" bindtap='bindJoinGroup'>
+          <text wx:if="{{member}}">已加入</text>
+          <text wx:else>加入</text>
+        </button>             
+      </view>
+    </view> -->
+    <view class="info-introduce-wrap">
+      <text class="info-introduce{{isOverflow ? '1' : ''}}">{{introduced}}</text>
+    </view>
+  </view>
+  <view class="info-introduce-more" bindtap="showMoreDesc">
+    <image class="info-introduce-icon" src="/images/icon/more.png"></image>
+  </view>
+  <view class="list-item-top-divider"></view>
+  <view style="background-color: #fff;" wx:if="{{list && list.length > 0}}">
+    <import src="/pages/template/template.wxml" />
+    <template is="title" data="{{title: '热点资讯'}}" ></template>
+  </view>
+  <template is="gohome"></template>
+
+<!-- 活动列表 -->
+  <view class='listbox'>
+    <view class='list'>
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{index}}" 
+          data-type='{{item.category}}' data-id="{{item.infoId}}"  bindtap="goToDetailPage" >
+          <view class="item-info">
+            <view class="item-title">
+              <text class="item-title-info"><text class="activity-state" style="{{item.isActive == '0' ? '':'display: none;'}}; ">已结束</text>{{item.title}}</text>
+              <view>
+                <text class="item-type" wx:if='{{item.category == 1}}'>活动</text>
+                <text class="item-type" wx:elif='{{item.category == 2}}'>招聘</text>
+                <text class="item-type" wx:elif='{{item.category == 3}}'>求职</text>
+                <text class="item-type" wx:elif='{{item.category == 4}}'>合作</text>
+                <text class="item-type" wx:else='{{item.category == 5}}'>课程</text>
+              </view>
+            </view>
+            <image class="item-image" wx:if="{{item.pic}}" src='{{pictureHost + item.pic}}' mode='widthFix'> </image>
+          </view>          
+          <view class="item-bottom">
+            <view class="author" style="width:78%;">
+              <image class="author-avatar" src="{{pictureHost + item.userHeader}}"></image>
+              <text class="author-name" style="max-width: 80%;">{{item.userName}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="content">
+              <image class="views-icon" src="/images/img/view.png"></image>
+              <!-- <text class="views-title">在看:</text> -->
+              <text class="views-count">{{item.hot}}</text>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+</view>

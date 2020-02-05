@@ -1,0 +1,14 @@
+@import "/pages/template/template.wxss";
+
+.dividing {
+  margin: 0 -30rpx;
+}
+.show{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 30rpx; */
+  flex-wrap: wrap;
+}
+.hidden{
+  display: none;
+}

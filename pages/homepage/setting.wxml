@@ -1,0 +1,41 @@
+<!--pages/homepage/setting.wxml-->
+<view class="container">
+    <view class="setting">
+      <!-- <view class="setting-item" bindtap="bindCheckForJoin"
+       wx:if="{{master}}" >
+          <text class="setting-text">加入时需要验证</text>
+          <switch style='zoom:.8;' checked />
+      </view> -->
+      <!-- <view class="setting-item" bindtap="bindShowSetting"
+      wx:if="{{master}}">
+          <text class="setting-text">仅成员可查看信息</text>
+          <switch style='zoom:.8;' checked />
+      </view>       -->
+      <view class="setting-item" bindtap="bindAudits" wx:if="{{master}}">
+          <text class="setting-text">审核发布信息</text>
+      </view>
+      <view class="setting-item" bindtap="bindApplyMembers" wx:if="{{master}}">
+          <text class="setting-text">审核加入申请</text>
+      </view>    
+      <view class="setting-item" bindtap="goToMemberList" wx:if="{{master}}">
+          <text class="setting-text">成员管理</text>
+      </view>   
+       <view class="setting-item" bindtap="goToMemberList" wx:elif="{{member}}">
+          <text class="setting-text">查看成员</text>
+      </view>                
+      <!-- <view class="setting-item" bindtap="bindUpdateMaster" 
+      wx:if="{{master}}">
+          <text class="setting-text">转让管理员权限</text>
+      </view>       -->
+      <!-- <view class="setting-item" bindtap="bindJoinSetting" 
+      wx:if="{{master}}">
+          <text class="setting-text">设置加入条件</text>
+      </view>         -->
+      <view class="setting-item" bindtap="bindExit"
+      wx:if="{{member || member}}">
+          <text class="setting-text">退出</text>
+      </view>
+    </view>
+</view>
+
+

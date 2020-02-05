@@ -1,0 +1,2 @@
+@import "/pages/template/template.wxss";
+@import "/pages/partner/detail/detail.wxss";

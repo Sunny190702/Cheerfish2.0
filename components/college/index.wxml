@@ -1,0 +1,14 @@
+<view class="containers">
+  <search id='search' title="学院" page="college" bindtap="searhpage"></search>
+  <view class="college-container">
+    <view class="college" bindtap="goToCollegePage" wx:for="{{collegeArray}}" wx:key="{{index}}" id="{{item.id}}">
+      <view class="image">
+        <image class="college-image" src="https://test.hanstate.com/Pictures/{{item.badge}}" />
+      </view>
+      <view class="desc">
+        <text class="name">{{item.owner}}</text>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

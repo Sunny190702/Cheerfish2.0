@@ -1,0 +1,65 @@
+/* pages/profile/modelInfo/info.wxss */
+@import "/pages/template/template.wxss";
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width:80vw;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.upload-image{
+  width:80vw;
+}
+.course-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 30rpx 135rpx 30rpx;
+}
+
+.detail-wrap {
+  display: flex;
+  flex-direction: column;
+  box-shadow:1px 1px 10px #ececef;
+  border-radius:10px;
+  padding: 15rpx 30rpx;
+}
+.detail-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item-value {
+  font-size: 14px;
+  padding:  5rpx 10rpx 15rpx 10rpx;
+  padding-left: 10rpx;
+  /* color: #8c8c8c; */
+  color:#333333;
+}
+
+
+.button {
+  font-size: 12px;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #3373ad;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid #c2d5e7;
+  width:240rpx;
+  padding:5rpx 15rpx;
+  margin-left: 10rpx;
+}
+
+.auth {
+  padding: 50rpx 0 30rpx 0;
+  align-self: center;
+  color: #a9a9a9;
+  font-size: 14px;
+}

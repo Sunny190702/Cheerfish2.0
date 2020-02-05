@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "学院",
+  "usingComponents": {
+    "search": "/components/search/index"
+  }
+}

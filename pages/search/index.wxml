@@ -1,0 +1,7 @@
+  <view class="search-container" data-page="{{page}}">
+    <image class="search-logo" src="/images/navbar/logo.png"></image>
+    <input class="search-input" type="text" placeholder="搜索{{title}}">
+      <image class="search-icon" src="/images/navbar/search1.png"></image>
+    </input>
+    <text class="search-text">搜索</text>
+  </view>

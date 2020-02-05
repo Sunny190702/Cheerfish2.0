@@ -1,0 +1,160 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <!-- 增加引导页 -->
+  <introduce id="introduce" class="introduce" bindtap="showIntroduceInfo" 
+  wx:if="{{showIntroduceInfo}}"></introduce>
+
+  <view class="course-card">
+    <view class="course-card-image">
+      <!-- <view> -->
+       <image class="course-card-cover" wx:if="{{list.pic}}" src="{{pictureHost + list.pic}}" data-src="{{pictureHost + list.pic}}" bindtap="showImage" mode='aspectFill'></image>
+      <!-- </view> -->
+    </view>
+
+    <view class="college-card-wrap" style='padding-bottom: 26rpx;'>
+          <view class="tit-title">{{list.title}}</view>
+    </view>    
+
+    <view class="college-card-wrap">
+      <view class="college-card-card1">
+        <image class="college-card-logo" wx:if="{{list.publisherInfo.header}}" src="{{pictureHost + list.publisherInfo.header}}">
+          </image>
+        <view class="college-card-tit">
+          <text class="college-card-title">{{list.publisherInfo.name}}</text>
+          <text class="college-card-name">{{updatedAt}}</text>
+        </view>
+      </view>
+    </view>    
+  </view>
+  <view class="info-message-box">
+    <view>
+      <image class="upload-box-hot-icon" src="/images/icon/hot.png"></image>
+      <text class="upload-box-time">{{list.hot}}</text> 
+    </view>   
+      <view class="college-card-share-wrap">
+        <text class="college-card-share" wx:if="{{list.cost == 0}}">免费</text>
+        <text class="college-card-share" wx:else>¥ {{list.cost}}</text>
+      </view>    
+  </view>
+  <view class="dividing"></view>
+  <!--报名信息  -->
+  <reguser id='reguser' users='{{regusers}}' regNums='888'
+    regNum='{{regNum.totalRows}}' itemId='{{list.id}}' type='0' identity='{{list.publisherInfo.id}}'></reguser>
+  <view class="dividing"></view>
+     
+  <!-- 公众号 -->
+  <view style="width:100%;">
+    <official-account style=""></official-account>
+  </view> 
+  <!-- 公众号 -->
+
+  <!-- 活动详情 -->
+  <template is="title" data="{{title: '活动详情'}}"></template>
+
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text class="item-key">开始时间:</text>
+        <text class="item-value">{{start}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">结束时间:</text>
+        <text class="item-value">{{end}}</text>
+      </view>      
+      <view class="detail-item">
+        <text class="item-key">活动地点:</text>
+        <text class="item-value">{{list.address}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">主办单位: </text>
+        <text class="item-value">{{list.author}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">活动类型: </text>
+        <!-- <view class="tagview"> -->
+          <text class="item-value" wx:if="{{list.type == 0}}">论坛</text>
+          <text class="item-value" wx:elif="{{list.type == 1}}">沙龙</text>
+          <text class="item-value" wx:elif="{{list.type == 2}}">聚餐</text>
+          <text class="item-value" wx:elif="{{list.type == 3}}">其他</text>
+        <!-- </view>   -->
+      </view>        
+      <view class="detail-item">
+        <text class="item-key">活动人数: </text>
+        <text class="item-value">{{list.regNum == 999999 ? '不限' : list.regNum}}</text>
+      </view>      
+      <view class="detail-item">
+        <text class="item-key">报名截至: </text>
+        <text class="item-value">{{deadLine}}</text>
+      </view>           
+      <view class="detail-item">
+        <text class="item-key">详细内容:</text>
+        <text class="item-value">{{list.content}}</text>
+      </view>
+    </view>
+
+    <image src="{{pictureHost+list.longPicture}}"  wx:if="{{list.longPicture}}" mode='widthFix' style='width:100%'></image>
+
+    <view style="padding-bottom:1rpx;padding-top:10rpx;">
+        <!-- <image class="assis-card-cover" src="/images/default/cheerfish_info.jpg" mode='widthFix'></image> -->
+        <image class="assis-card-cover" wx:if="{{banner}}" src="{{pictureHost + banner}}" mode='widthFix'></image>
+        <image class="assis-card-cover" wx:else src="/images/default/cheerfish_info.jpg" mode='widthFix'></image>     
+    </view>    
+    <view class="auth">
+      <text >活动主办方拥有最终解释权</text>
+    </view>    
+  </view>
+
+  <!-- 海报画布 -->
+  <view class='imagePathBox' hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" class='create-image' bindtap='exit'></image>
+    <button class='save' bindtap='save'>保存相册，分享到朋友圈</button>
+  </view>
+  <view hidden="{{maskHidden == false}}" class="mask" bindtap='exit'></view> 
+  <view class="canvas-box" bindtap='exit'>
+    <canvas  style="width: 400px;height: 700px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view>  
+
+  <modal id='modal' show="{{showModal}}" title="{{list.title}}" itemType="0" itemId="{{list.id}}"></modal>
+  <joinmodal id='joinmodal' show="{{showOrderModal}}" title="{{list.title}}" itemType="5" itemId="{{list.id}}" isRegister="{{list.isRegister}}" bind:updateUI="updateUI"></joinmodal>    
+  <template is="gohome"></template>
+  <view class="{{systemInfo == 'ios'}} ? position-button-wrap-ios : position-button-wrap"
+    style="{{list.isActive == '0' ? 'display: none;' : ''}}">
+    <view class="position-left">
+        <!-------------------分享------------------>
+        <!-- <button class="position-share" open-type="share" > -->
+        <button class="position-share" bindtap='showShareMenu'>
+          <image class="position-share-image" src="/images/icon/share1.png"></image>
+          <text class="share-text" style="padding-left: 8rpx;">分享</text>
+        </button>
+        <!-------------------收藏------------------>
+        <view class="position-collect" data-id="{{list.id}}" bindtap="collect" style="padding: 0 15rpx;">
+          <image class="position-collect-image" src="{{list.isFavorite == '0' ? '/images/icon/collectn1.png' : '/images/icon/collecty1.png'}}"></image>
+          <text class="collect-text">{{list.isFavorite == '0' ? '收藏' : '已收藏' }}</text>
+        </view>
+        <!-------------------举报------------------>
+        <view class="position-collect" data-id="{{list.id}}" bindtap="reports">
+          <image class="position-collect-image" src="/images/icon/report1.png"></image>
+          <text class="collect-text">举报</text>
+        </view>
+    </view>
+    <button class="position-button" bindtap="joinTap">{{list.isRegister == '0' ? '报名' : '已报名' }}</button>
+  </view>
+    <!-- 分享菜单 -->
+  <view class='menu-view' animation="{{animationData}}">  
+    <view>
+      <button class="image_button" open-type="share">
+        <image class="menu-image" src="/images/img/weixin.png"> </image>
+        <text>分享给微信好友</text>
+      </button>
+      <button class="image_button" bindtap="formSubmitShareBill">
+        <image class="menu-image" src="/images/img/pyq.png"> </image>
+        <text>生成海报分享</text>
+      </button>         
+    </view>
+    <button class='menu-button' bindtap='hideMenuModal'>取消</button>
+  </view>
+  <!-- <toast-component class="toast"></toast-component> -->
+</view>

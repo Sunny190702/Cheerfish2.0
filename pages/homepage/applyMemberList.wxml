@@ -1,0 +1,41 @@
+<!--pages/homepage/applyMemberList.wxml-->
+<view class="container">
+  <view class="group-info">
+    <loading hidden="{{loadingHidden}}" style="">
+      加载中...
+    </loading>    
+  </view>
+  <import src="/pages/template/template.wxml" />
+  <template is="gohome"></template>
+
+  <view class='listbox'>
+    <view class='list'>
+        <view class="none-wrap" style="{{list.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text class="none-test">没有需要审核的信息哦~~</text>
+        </view>
+        <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" 
+          data-type='{{item.category}}'>
+          <view class="item-top">
+            <view class="author">
+              <image class="author-avatar-m" src="{{pictureHost + item.header}}"></image>
+              <text class="author-name">{{item.name}}</text>
+            </view>        
+          </view>          
+          <view class="item-info">
+              <text class="item-title-info">申请理由：{{item.reason}}</text>
+          </view>          
+          <view class="item-bottom">
+            <view class="result-card">
+              <button catchtap='bindApply' data-id="{{item.id}}" data-result="1"
+              data-type="{{item.category}}">通过</button>
+              <button catchtap='bindApply' data-id="{{item.id}}" data-result="2"
+              data-type="{{item.category}}">驳回</button>
+            </view>
+          </view>
+        </view>
+    </view>
+  </view>
+
+  <!-- <view class="dividing"></view> -->
+</view>

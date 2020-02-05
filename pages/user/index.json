@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注册",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "toast-component": "/components/toast/toast"
+  }
+}

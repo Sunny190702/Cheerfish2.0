@@ -1,0 +1,52 @@
+<!--pages/homepage/createGroup.wxml-->
+<view class="container">
+    <view class="upload-content" bindtap="onChooseHeaderHandler">
+      <view class="upload-content" wx:if="{{pic}}">
+        <image class="upload-bg"   src="{{pic}}" />
+        <text class="upload-text" style="margin-top:10px;">点击上传头像</text>
+      </view>
+      <view class="upload-content" wx:else>
+        <view class="upload-bg"></view>
+        <image class="upload-bg-icon" src="/images/img/upload-group.png"></image>
+        <text class="upload-text">点击上传头像</text>
+      </view>
+    </view>    
+      
+    <view class="upload-content-bg">
+      <image class='background-image' src='/images/user/banner.png' mode='widthFix'></image>
+    </view>
+</view>
+
+<view>
+  <view class='message-card'>
+    <form bindsubmit="onCompleteUserInfoHandler" report-submit>
+      <view class='item'>
+        <label class='label' bindtap="showload">
+          <text class="star">*</text> 名称
+        </label>
+
+        <input class='input' name='name' confirm-type="next" focus='{{focusInput}}' maxlength='20' placeholder="请输入小圈名称" />
+      </view>
+      <view class='item'>
+        <label class='label'>
+          <text class="star">*</text> 简介
+        </label>
+        <!-- <input class='input' name='introduced' focus='{{focusInput}}' maxlength='100' confirm-type="next" placeholder="小圈介绍"/> -->
+        <textarea class='textarea' name='introduced' maxlength='500' placeholder='请输入小圈简介' placeholder-style='color: #777777;font-size:14px;' auto-height='true'  value="{{introduced}}"></textarea>
+      </view>
+      <view class='item'>
+        <label class='label'>
+          <text class="star">*</text> 说明
+        </label>
+        <!-- <input class='input' name='content' focus='{{focusInput}}' maxlength='100' confirm-type="next" placeholder="申请说明"/> -->
+        <textarea class='textarea' name='reason' maxlength='500' placeholder='创建说明100字以内' placeholder-style='color: #777777;font-size:14px;' auto-height='true'  value="{{reason}}"></textarea>
+      </view>
+
+      <view class="dividing" style="margin:0 -30rpx;"></view>
+      <view class='btn-wrap'>
+        <button class='btn' form-type='submit'>提交审核</button>
+      </view>
+    </form>
+  </view>
+</view>
+

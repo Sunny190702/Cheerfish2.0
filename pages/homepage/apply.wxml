@@ -1,0 +1,20 @@
+<!--pages/homepage/apply.wxml-->
+<view class='message-card'>
+  <form bindsubmit="handleSubmit" report-submit>
+    <view class='label-item '>
+      <label class='label'>
+        <text class="star">*</text> 申请加入小圈理由
+      </label>
+
+      <textarea class='textarea' name='reason' maxlength='500' placeholder='申请加入小圈说明，500字以内（必填）' placeholder-style='color: #cccccc' value="{{reason}}"></textarea>  
+    </view>
+
+    <view class="dividing" style="margin:0px -30rpx;"></view>
+    <view class='btn-wrap'>
+      <button class='btn' form-type='submit'>提交审核</button>
+    </view>
+  </form>
+</view>
+
+
+

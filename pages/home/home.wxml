@@ -1,0 +1,108 @@
+<import src="../template/template.wxml" />
+<!-- <import src="/pages/template/search/index.wxml" /> -->
+<!-- 引入自定义组价。'navbar-data'中navbar是自定义名字，决定了组件中'navbarData'的名字 -->
+<!-- ************<navbar>************** -->
+<!-- <nav-bar navbar-data='{{nvabarData}}'></nav-bar> -->
+<!-- ************</navbar>************* -->
+<!-- ************<searchNav>************** -->
+<!-- <view class='view-page'>
+  <navbar page-name="你当前页面的名字"></navbar>
+  <view class='page-content' style='height:calc(100vh - {{navH}}px)'> -->
+<!-- ************</searchNav>************* -->
+    <view class="containers">
+      <!-- <template is="search-container" data="{{page: 'course', title: '课程'}}" /> -->
+      <message></message> 
+      <!-- <message id='notice'></message> -->
+      <loading hidden="{{loadingHidden}}">
+        加载中...
+      </loading>
+      <!-- 增加引导页 -->
+      <introduce id="introduce" class="introduce" bindtap="showAddInfo" 
+      wx:if="{{showAddInfo}}"></introduce>      
+      <search id='search' title="课程" page="course"></search>
+      <view class="swiper-container">
+        <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+          <block >
+            <swiper-item wx:for="{{list_ads}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToCoursePage">
+              <image wx:if="{{item.picture}}" src="{{pictureHost+item.picture}}" class="slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>   
+      </view>
+      <view class="dividing"></view>
+
+      <!-- 公众号 -->
+      <!-- <view style="width:100%;position:relative;height:168rpx;"> -->
+      <view style="width:100%;">
+        <official-account style=""></official-account>
+      </view>    
+      <view class="dividing"></view>
+      <!-- 公众号 -->
+
+      <view class="college">
+        <view class="college-list">
+          <!-- <block class="item-block" wx:for="{{collegeList}}" wx:key="{{index}}"> -->
+          <view class="college-item" bindtap="goToCollegePage" wx:for="{{collegeList}}" wx:key="{{index}}" id="{{item.id}}">
+            <image wx:if="{{item.badge}}"  src="{{pictureHost+item.badge}}" />
+            <text class="name" wx:if="{{item.owner==item.name}}">{{item.owner}}</text>
+            <text class="name" wx:else>{{item.owner}}{{item.name}}</text>
+            <!-- <text class="name1">{{item.owner}}</text> -->
+          </view>
+          <!-- </block> -->
+        </view>
+        <button hover-class="hover" class="more" bindtap="goToCollegeListPage">更多学院</button>
+      </view>
+      <view class="dividing"></view>
+      <!-- <view class="course">
+        <template is="title" data="{{title: '正在报名课程'}}"></template>
+        <view class="course-enter-list">
+          <view class="course-enter-image" style="background-image: url('https://cdn.douhs.com//images/course/test.png')" wx:for="{{list_enter_course}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToCoursePage">
+            <text class="course-enter-item-text">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="dividing"></view> -->
+      <!-- <view class="course">
+        <template is="title" data="{{title: '新上课程'}}"></template>
+        <view>
+          <view class="course-new-item" bindtap="goToCoursePage" data-list="1"
+               wx:for="{{list_new_course}}" wx:key="{{index}}" id="{{item.id}}">
+            <view class="progress" >
+              <view class="course-new-image" wx:if="{{item.picture}}" 
+              style="background-image: url({{pictureHost+item.picture}})">
+              </view>   
+              <text class="course-new-text">{{item.school.owner}}：{{item.name}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="dividing"></view> -->
+      <view class="course">
+        <template is="title" data="{{title: '精选课程'}}"></template>
+        <view>
+          <view class="course-chosen" wx:for="{{list_all}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToCoursePage" data-list="2">
+            <view class="course-chosen-image" wx:if="{{item.picture}}" style="background-image: url('{{pictureHost+item.picture}}')" ></view>
+            <view class="course-chosen-image" wx:else >
+              <image  src="/images/default/dpartner2.png"> </image>
+            </view>            
+            <view class="course-chosen-desc">
+              <text class="course-chosen-desc-title">{{item.name}}</text>
+              <text class="course-chosen-desc-desc" wx:if="{{item.school.name == item.school.owner}}">主办学院：{{item.school.owner}}</text>
+              <text class="course-chosen-desc-desc" wx:else>主办：{{item.school.owner}}{{item.school.name}}</text>
+              <view class="course-chosen-icon">
+                <view>
+                  <image class="icon1" src="/images/img/view.png"></image>
+                  <text class="icon-number">在看:{{item.hot}}</text>
+                  <!-- <image class="icon2" src="/images/img/share.png"></image> -->
+                </view>
+                <!-- <button id="{{item.id}}" catchtap="joinTap" data-list="2"
+                 style="{{item.isRegister == '1' ? 'background-color: #0173d7; color:#ffffff' : 'background-color:#d9ebfa; color:#053c96'}}" >{{item.isRegister == '1' ? '已预约' : '咨询'}}</button>                       -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- <toast-component class="toast"></toast-component> -->
+    </view>
+  <!-- </view>
+</view> -->

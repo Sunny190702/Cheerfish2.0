@@ -1,0 +1,73 @@
+<view class="{{'show'}}">
+  <view class="container">
+    <view class="upload-content" bindtap="onChooseHeaderHandler">
+      <view class="upload-content" wx:if="{{header}}">
+        <image class="upload-bg"   src="{{header}}" />
+        <text class="upload-text" style="margin-top:10px;">点击上传头像</text>
+      </view>
+      <view class="upload-content" wx:else>
+        <view class="upload-bg"></view>
+        <image class="upload-bg-icon" src="/images/user/upload-default.png"></image>
+        <text class="upload-text">点击上传头像</text>
+      </view>
+    </view>    
+      
+    <view class="upload-content-bg">
+      <image class='background-image' src='/images/user/banner.png' mode='widthFix'></image>
+    </view>
+  </view>
+
+  <view class='page-course-new'>
+    <form bindsubmit="onCompleteUserInfoHandler" report-submit>
+      <view class='item'>
+        <label class='label' bindtap="showload">
+          <text class="star">*</text> 姓名
+        </label>
+
+        <input class='input' name='name' confirm-type="next" focus='{{focusInput}}' maxlength='20' placeholder="请输入姓名（提交后不可更改）" wx:if="{{showCompleteComponents}}"/>
+        <input class='input' name='name' confirm-type="next" focus='{{focusInput}}' maxlength='20' value="{{userInfo.userBaseInfo.name}}" placeholder="请输入姓名" wx:if="{{!showCompleteComponents}}" disabled='disabled'/>
+      </view>
+      <view class='item'>
+        <label class='label'>
+          <text class="star">*</text> 学校
+        </label>
+        <input class='input' name='school' focus='{{focusInput}}' maxlength='50' confirm-type="next" placeholder="请输入学校名称" value="{{userInfo.userBaseInfo.school}}" />
+      </view>
+      <view class='item'>
+        <label class='label'>
+          <text class="star">*</text> 手机号码
+        </label>
+        <input class='input' name='phone' type="number" focus='{{focusInput}}' maxlength='11' confirm-type="next" placeholder="请输入手机号码" value="{{userInfo.userBaseInfo.phone}}"></input>
+      </view>
+<view class='item'>
+        <label class='label'>
+          <text class="star">*</text> 微信号
+        </label>
+        <input class='input' name='wxId'  focus='{{focusInput}}' maxlength='32' confirm-type="next" placeholder="请输入微信号" value="{{userInfo.userBaseInfo.wxId}}"></input>
+
+      </view>        
+      <view class='item' wx:if="{{showCompleteComponents}}">
+        <label class='label'>
+          <text class="star" style="color: #fff;">*</text> 邀请人
+        </label>
+        <input class='input' name='inviterPhone' type="number" focus='{{focusInput}}' maxlength='11' placeholder='请输入邀请人手机' />
+      </view>
+ 
+      <view class="dividing" style="margin:0 -30rpx;"></view>
+      <view class="bottom-tip"  wx:if="{{showCompleteComponents}}">
+        <image class="tip" name='isChecked' bindtap="onPolicyCheckedHandler" src="{{policyChecked ? '/images/icon/tipy.png' : '/images/icon/tipn.png'}}"></image>
+        <text class="tip1" name='isChecked' bindtap="onPolicyCheckedHandler">我已阅读同意</text>
+        <text class="tip3" bindtap="toMenuForPrivacy">《隐私政策》</text>
+        <text class="tip1">与</text>
+        <text class="tip3" bindtap="toMenuForService">《服务协议》</text>
+      </view>
+      <view class='btn-wrap'>
+        <button class='btn' form-type='submit'>提交审核</button>
+      </view>
+      <view class="jump" bindtap="onSkipHandler" style="{{type == 'attest' ? 'display: none;' : ''}}" wx:if="{{showSkip}}">
+        <text> 跳过 >> </text>
+      </view>
+    </form>
+  </view>
+
+</view>

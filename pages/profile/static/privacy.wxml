@@ -1,0 +1,25 @@
+<!--pages/profile/static/privacy.wxml-->
+<view class="container">
+  <view class="container">
+    <view class="upload">
+       <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+    </view>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>{{item.title}}</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text class="item-value">{{item.content1}}</text>
+        <text class="item-value-especial" bindtap='toMenuForService'>《巧鱼服务协议》</text>
+        <text class="item-value">{{item.content2}}</text>                         
+      </view>
+    </view>
+    <view class="auth">
+      <text>平台拥有最终解释权</text>
+    </view>
+  </view>
+</view>

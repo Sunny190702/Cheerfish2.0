@@ -1,0 +1,59 @@
+/* pages/profile/static/privacy.wxss */
+@import "/pages/template/template.wxss";
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width:100vw;
+  align-items: center;
+  height: 100vw * 16 /9;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.upload-image{
+  width:100vw;
+  height: 100vw * 16 /9;
+}
+.course-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 30rpx 135rpx 30rpx;
+}
+
+.detail-wrap {
+  display: flex;
+  flex-direction: row;
+  box-shadow:1px 1px 10px #ececef;
+  border-radius:10px;
+  padding: 15rpx 30rpx;
+}
+.detail-item {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item-value {
+  font-size: 14px;
+  padding:  5rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  /* color: #8c8c8c; */
+  color:#333333;
+}
+
+.auth {
+  padding: 50rpx 0 30rpx 0;
+  align-self: center;
+  color: #a9a9a9;
+  font-size: 14px;
+}
+
+.item-value-especial{
+  font-size: 14px;
+  padding:  15rpx 0 15rpx 10rpx;
+  padding-left: 10rpx;
+  /* color: #8c8c8c; */
+  color: #3c74ec;
+}

@@ -1,0 +1,26 @@
+<!-- <import src="../template/template.wxml" /> -->
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="upload">
+    <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>我的邀请码</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <view>
+          <text class="item-key">VIP邀请码:</text>
+          <text class="item-value">{{invitationCode}}</text>
+        </view>
+        <button bindtap='onFetchInvitationCodeHandler' class="button show" wx:if="{{!showShare}}">获取邀请码</button>
+        <button open-type="share" class="button show" wx:if="{{showShare}}">分享邀请码</button>
+      </view>
+    </view>
+    <!-- <template is="gohome" class="button {{show ? 'show' : 'hidden'}}"></template> -->
+  <toast-component class="toast"></toast-component>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+/* pages/homepage/joinGroups.wxss */
+@import "./groups.wxss";
+.list {
+  padding-bottom:100px;
+  margin-top: 1rpx;
+}
+/* .list {
+  padding-bottom:100px;
+  margin-top: 1rpx;
+}
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  margin: 20rpx 10rpx auto;
+  height: 80px;
+  line-height: 80px;
+  align-items: center;
+  border-bottom: 12rpx solid #eee;
+}
+.image {
+  height: 120rpx;
+  width: 120rpx;
+  margin: 0 5rpx;
+  flex-shrink: 0;
+  border-radius: 100%;
+  border:1px solid #aaaaaa;
+  align-self: center;
+} 
+.button{
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 120rpx;
+  border: 1px solid #017be1;
+  border-radius: 10px;
+  font-size: 8px;
+  align-self: center;
+} */

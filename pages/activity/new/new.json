@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布活动",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "toast-component": "/components/toast/toast"
+  }
+}

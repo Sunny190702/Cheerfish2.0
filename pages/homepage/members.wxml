@@ -1,0 +1,19 @@
+<!--pages/homepage/members.wxml-->
+<view class="container">
+  <view class="list">
+    <loading hidden="{{loadingHidden}}">
+      加载中...
+    </loading> 
+    <view class="list-item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" 
+      data-id="{{item.id}}" >
+      <image class="image" src="{{pictureHost + item.userBaseInfo.header}}"></image>
+      <view class='item-name'>
+        <text class="name">{{item.userBaseInfo.name}}</text>
+        <text class="member">学校:{{item.userBaseInfo.school}}</text>
+        <text class="member">职务:{{item.userBaseInfo.position}}</text>
+      </view>
+      <button class="button" bindtap="moveFromGroup" data-id="{{item.id}}" 
+      wx:if='{{master}}'>移除</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "小圈",
+  "usingComponents": {
+    "search": "/components/search/index"
+  }
+}

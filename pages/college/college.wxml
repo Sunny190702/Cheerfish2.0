@@ -1,0 +1,21 @@
+<import src="/pages/template/search/index.wxml" />
+<import src="/pages/template/template.wxml" />
+<view class="containers">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>
+  <!-- <template is="search-container" data="{{page: 'college',  title: '学院'}}"></template> -->
+  <search id='search' title="学院" page="college"></search>
+  <template is="gohome"></template>
+  <view class="college-container">
+    <view class="college" bindtap="goToCollegePage" wx:for="{{collegeArray}}" wx:key="{{index}}" id="{{item.id}}">
+      <view class="image">
+        <image class="college-image" src="{{pictureHost + item.badge}}" />
+      </view>
+      <view class="desc">
+        <text class="name">{{item.owner}}</text>
+        <text class="title">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

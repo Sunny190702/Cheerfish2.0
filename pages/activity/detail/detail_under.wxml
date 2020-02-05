@@ -1,0 +1,96 @@
+<!--pages/activity/detail/detail_under.wxml-->
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <view class="course-card">
+    <view class="course-card-image">
+       <image class="course-card-cover" wx:if="{{list.pic}}" src="{{pictureHost + list.pic}}" ></image>
+    </view>
+
+    <view class="college-card-wrap" style='padding-bottom: 26rpx;'>
+          <view class="tit-title">{{list.title}}</view>
+    </view>    
+
+    <view class="college-card-wrap">
+      <view class="college-card-card1">
+        <image class="college-card-logo" wx:if="{{list.publisherInfo.header}}" src="{{pictureHost + list.publisherInfo.header}}">
+        </image>
+        <view class="college-card-tit">
+          <text class="college-card-title">{{list.publisherInfo.name}}</text>
+          <text class="college-card-name">{{updatedAt}}</text>
+        </view>
+      </view>
+    </view>    
+  </view>
+
+  <view class="info-message-box">
+    <view>
+      <image class="upload-box-hot-icon" src="/images/icon/hot.png"></image>
+      <text class="upload-box-time">{{list.hot}}</text> 
+    </view>   
+      <view class="college-card-share-wrap">
+        <text class="college-card-share" wx:if="{{list.cost == 0}}">免费</text>
+        <text class="college-card-share" wx:else>¥ {{list.cost}}</text>
+      </view>
+  </view>    
+
+  <view class="dividing"></view>
+
+  <template is="title" data="{{title: '活动详情'}}"></template>
+
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text class="item-key">开始时间:</text>
+        <text class="item-value">{{start}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">结束时间:</text>
+        <text class="item-value">{{end}}</text>
+      </view>      
+      <view class="detail-item">
+        <text class="item-key">活动地点:</text>
+        <text class="item-value">{{list.address}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">主办单位: </text>
+        <text class="item-value">{{list.author}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">活动类型: </text>
+        <!-- <view class="tagview"> -->
+          <text class="item-value" wx:if="{{list.type == 0}}">论坛</text>
+          <text class="item-value" wx:elif="{{list.type == 1}}">沙龙</text>
+          <text class="item-value" wx:elif="{{list.type == 2}}">聚餐</text>
+          <text class="item-value" wx:elif="{{list.type == 3}}">其他</text>
+        <!-- </view>   -->
+      </view>        
+      <view class="detail-item">
+        <text class="item-key">活动人数: </text>
+        <text class="item-value">{{list.regNum == 999999 ? '不限' : list.regNum}}</text>
+      </view>      
+      <view class="detail-item">
+        <text class="item-key">报名截至: </text>
+        <text class="item-value">{{deadLine}}</text>
+      </view>           
+      <view class="detail-item">
+        <text class="item-key">详细内容:</text>
+        <text class="item-value" decode='true'>{{list.content}}</text>
+      </view>
+    </view>
+
+    <image src="{{pictureHost+list.longPicture}}"  wx:if="{{list.longPicture}}" mode='widthFix' style='width:100%'></image>
+    
+    <view style="padding-bottom:1rpx;padding-top:10rpx;">
+        <!-- <image class="assis-card-cover" src="/images/default/cheerfish_info.jpg" mode='widthFix' ></image> -->
+        <image class="assis-card-cover" wx:if="{{banner}}" src="{{pictureHost + banner}}" mode='widthFix'></image>
+        <image class="assis-card-cover" wx:else src="/images/default/cheerfish_info.jpg" mode='widthFix'></image>     
+    </view>   
+    <view class="auth">
+      <text >活动主办方拥有最终解释权</text>
+    </view>         
+  </view>
+
+</view>

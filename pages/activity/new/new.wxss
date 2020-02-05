@@ -1,0 +1,13 @@
+/* pages/home/new/new.wxss */
+@import '/pages/job/new/new.wxss';
+.upload {
+  height: 430rpx;
+  width: 100%;
+}
+.textarea {
+  padding-top: 30rpx;
+  color: #333333;
+  font-size: 14px;
+  height: 300rpx;
+  width:100%;
+}

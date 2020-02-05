@@ -1,0 +1,84 @@
+<view class="container">
+    <image class="upload-banner"  src='/images/default/ic_share.png' mode='widthFix'> </image>
+</view>
+<view>
+  <view class='page-course-new' style="{{currentTab == 0 ? '' : 'display: none'}}">
+    <form bindsubmit="reruitSubmit" bindreset="formReset">
+      <view class='item'>
+        <text class='text'>单位名称</text>
+        <input class='input' name='enterpriseName' focus='{{focusInput}}' maxlength='40' placeholder='请输入单位名称（必填）' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>
+      <view class='item'>
+        <text class='text'>职位名称</text>
+        <input class='input' name='position' focus='{{focusInput}}' maxlength='40' placeholder='请输入职位名称（必填）' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>
+
+      <textarea class='textarea' name='jobDes' maxlength='5000' placeholder='职位描述5000字以内（必填）' placeholder-style='color: #999'  auto-height='true' 
+      bindinput="bindTextAreaInput" value="{{jobDes}}"></textarea>       
+      <view class='item'>
+        <text class='text'>手机号码</text>
+        <input class='input' name='phone' focus='{{focusInput}}' type="number"  maxlength='18' placeholder='请输入联系电话(必填)' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>
+      <view class='item'>
+        <text class='text'>联系邮箱</text>
+        <input class='input' name='email' focus='{{focusInput}}' maxlength='60' placeholder='请输入联系邮箱(必填)' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>      
+      <view class='item'>
+	      <text class="text" decode="{{true}}" >微信&emsp;ID</text>
+        <input class='input' name='wxId' focus='{{focusInput}}' maxlength='60' placeholder='请输入微信ID' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>    
+
+      <view class='item'>
+        <text class='text'>工作地点</text>
+        <input class='input' name='jobAddress' focus='{{focusInput}}' maxlength='50' placeholder='请输入工作地点（必填）' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>     
+      <view class="dividing" style="margin:0 -30rpx;"></view>
+      <!-- <view class="bottom-tip" name='isTop' bindtap="topTap">
+        <image class="tip" src="{{isTOP ? '/images/icon/tipy.png' : '/images/icon/tipn.png'}}"></image>
+        <text class="tip1">帮我置顶</text>
+        <text class="tip2">(置顶将消耗100鱼币)</text>
+        <text class="tip3" catchtap="blanceRules">如何赚鱼币？</text>
+      </view> -->
+      <view class='btn-wrap'>
+        <button class='summitbtn' form-type='submit' disabled="{{button_state}}">发布</button>
+      </view>
+    </form>
+  </view>
+
+  <view class='page-course-new' style="{{currentTab == 1 ? '' : 'display: none'}}">
+    <form bindsubmit="cooperationSubmit" bindreset="formReset">
+      <view class='item'>
+        <text class='text'>求职意向</text>
+        <input class='input' name='position' focus='{{focusInput}}' maxlength='40' placeholder='如：求北京销售总监职务（必填）' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>
+       
+      <textarea class='textarea' name='content' maxlength='5000' 
+      placeholder='求职内容5000字以内（必填）'  style='min-height: 430rpx' 
+      placeholder-style='color: #999' auto-height='true' 
+      bindinput="bindTextAreaInput" value="{{content}}"></textarea>
+
+      <view class='item'>
+        <text class='text'>联系电话</text>
+        <input class='input' name='phone' focus='{{focusInput}}' type="number"  maxlength='18' placeholder='请输入联系电话(必填)' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>
+      <view class='item'>
+        <text class='text'>联系邮箱</text>
+        <input class='input' name='email' focus='{{focusInput}}' maxlength='60' placeholder='请输入联系邮箱(必填)' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>      
+      <view class='item'>
+        <text class="text" decode="{{true}}" >微信&emsp;ID</text>
+        <input class='input' name='wxId' focus='{{focusInput}}' maxlength='60' placeholder='请输入微信ID' placeholder-style='' placeholder-style='color: #999'></input>
+      </view>         
+      <view class="dividing" style="margin:0 -30rpx;"></view>
+      <!-- <view class="bottom-tip" name='isTop' bindtap="topTap">
+        <image class="tip" src="{{isTOP ? '/images/icon/tipy.png' : '/images/icon/tipn.png'}}"></image>
+        <text class="tip1">帮我置顶</text>
+        <text class="tip2">(置顶将消耗100鱼币)</text>
+        <text class="tip3" catchtap="blanceRules">如何赚鱼币？</text>
+      </view> -->
+      <view class='btn-wrap'>
+        <button class='summitbtn' form-type='submit' disabled="{{button_state}}">发布</button>
+      </view>
+    </form>
+  </view>
+</view>

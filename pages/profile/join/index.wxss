@@ -1,0 +1,34 @@
+@import "/pages/template/template.wxss";
+
+/* .swiper-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15rpx 30rpx;
+}
+
+.job-tab {
+  height: 90rpx;
+  background-color: #f7f7f7;
+}
+
+.job-container:last-child {
+  padding-bottom: 100rpx;
+} */
+.dividing {
+  margin: 0 -30rpx;
+}
+.show{
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 30rpx; */
+  flex-wrap: wrap;
+}
+.hidden{
+  display: none;
+}
+
+/* course */
+.card-none {
+  display: none;
+}

@@ -1,0 +1,153 @@
+<view class="container">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>
+  <!-- 增加引导页 -->
+  <introduce id="introduce" class="introduce" bindtap="showIntroduceInfo" 
+  wx:if="{{showIntroduceInfo}}"></introduce>
+
+  <view class="course-card">
+    <view class="course-card-image">
+      <!-- <image class="course-card-cover" src="https://test.hanstate.com/Pictures/{{course.picture}}"></image> -->
+      <image class="course-card-cover" wx:if="{{course.picture}}" src="{{pictureHost+course.picture}}"></image>
+      <image class="course-card-cover" wx:elif="{{!course.picture}}" src="/images/default/dpartner2.png"></image>
+    </view>
+    <view class="course-card-tit">
+      <view class="tit-title">{{course.name}}</view>
+      <text class="icon-number">在看：{{course.hot}}</text>
+      <!-- <view class="tit-label">
+        <view class="label-view">
+          <text class="course-label" style="{{course.educational ? '' : 'display: none;'}}">学制：{{course.educational}}</text>
+        </view>
+        <view class="label-view">
+          <text class="course-label" style="{{course.duration ? '' : 'display: none;'}}">学时：{{course.duration}}</text>
+        </view>
+      </view> -->
+      <view class="tit-address" style="{{course.educational ? '' : 'display: none;'}}">
+        <image class="icon1" src="/images/menuicon/collegen.png" />
+        <text class="course-address" >学制：{{course.educational}}</text>
+      </view>
+      <view class="tit-address" style="{{course.duration ? '' : 'display: none;'}}">
+        <image class="icon1" src="/images/menuicon/collegen.png" />
+        <text class="course-address" >学时：{{course.duration}}</text>
+      </view>            
+      <view class="tit-address"  style="{{course.address ? '' : 'display: none;'}}">
+        <image class="icon1" src="/images/icon/addr.png" />
+        <text class="course-address">上课地点：{{course.address}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="dividing"></view>
+  <!-- <import src="../../template/template.wxml" /> -->
+  <reguser id='reguser' users='{{regusers}}' regNums='888'
+    regNum='{{regNum.totalRows}}' itemId='{{course.id}}' type='1'></reguser>
+  <view class="dividing"></view>
+
+  <!-- 公众号 -->
+  <view style="width:100%;">
+    <official-account style=""></official-account>
+  </view> 
+  <!-- 公众号 -->
+  
+  <!-- swiper -->
+  <view class="course-content-wrap">
+    <view class="swiper-tab">
+      <view class="swiper-tab-item {{currentTab==0?'active1':'active2'}}" data-current="0" bindtap="clickTab">
+        课程简介
+      </view>
+      <view class="swiper-tab-item {{currentTab==1?'active1':'active2'}}" data-current="1" bindtap="clickTab">
+        授课对象
+      </view>
+      <view class="swiper-tab-item {{currentTab==2?'active1':'active2'}}" data-current="2" bindtap="clickTab">
+        课程内容
+      </view>
+    </view>
+  </view>
+
+  <view class="swiper-content-wrap">
+    <view class = "{{currentTab == 0 ? 'show':'hidden'}}" >
+      <view class="swiper-content">
+        <text class="title">课程简介</text>
+        <text class="desc">{{course.introduction}}</text>
+      </view>
+  </view>
+
+
+  <view class = "{{currentTab == 1 ? 'show':'hidden'}}" >
+    <view class="swiper-content">
+      <text class="title">授课对象</text>
+        <text class="desc">{{course.prelect}}</text>
+      </view>
+  </view>
+  <view class = "{{currentTab == 2 ? 'show':'hidden'}}">
+    <view class="swiper-content">
+      <text class="title">课程内容</text>
+        <text class="desc">{{course.content}}</text>
+      </view>
+  </view>
+
+    <image src="{{pictureHost+course.longPicture}}"  wx:if="{{course.longPicture}}" mode='widthFix' style='width:100%'></image>
+
+    <view style="padding-bottom:1rpx;padding-top:10rpx;">
+        <image class="assis-card-cover" src="/images/default/cheerfish_info.jpg" mode='widthFix' 
+         bindtap='previewImage'></image>
+    </view>        
+    <view class="auth">
+      <text >上述信息来源于网络或授权</text>
+      <text >活动主办方拥有最终解释权</text>
+    </view>
+  </view>
+  
+
+  <!-- 海报画布 -->
+  <view class='imagePathBox' hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" class='create-image' bindtap='exit'></image>
+    <button class='save' bindtap='save'>保存相册，分享到朋友圈</button>
+  </view>
+  <view hidden="{{maskHidden == false}}" class="mask" bindtap='exit'></view> 
+  <view class="canvas-box" bindtap='exit'>
+    <canvas  style="width: 400px;height: 550px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view>  
+
+  <!-- swiper -->
+  <import src="/pages/template/template.wxml" />
+  <template is="gohome"></template>
+  <modal id='modal' show="{{showModal}}" title="{{course.name}}" itemType="5" itemId="{{course.id}}"></modal>
+  <ordermodal id='ordermodal' show="{{showOrderModal}}" title="{{course.name}}" itemType="5" itemId="{{course.id}}" isRegister="{{course.isRegister}}" bind:updateUI="updateUI"></ordermodal>  
+
+  <view class="{{systemInfo == 'ios'}} ? position-button-wrap-ios : position-button-wrap">
+    <view class="position-left">
+        <!-- <button class="position-share" open-type="share" > -->
+        <button class="position-share" bindtap='showShareMenu'>
+          <image class="position-share-image" src="/images/icon/share1.png"></image>
+          <text class="share-text" style="padding-left: 8rpx;">分享</text>
+        </button>
+
+        <view class="position-collect" data-id="{{course.id}}" bindtap="collect" style="padding: 0 15rpx; ">
+          <image class="position-collect-image" src="{{course.isFavorite == '0' ? '/images/icon/collectn1.png' : '/images/icon/collecty1.png'}}"></image>
+          <text class="collect-text">{{course.isFavorite == '0' ? '收藏' : '已收藏' }}</text>
+        </view>
+
+        <view class="position-collect" data-id="{{course.id}}" bindtap="reports">
+          <image class="position-collect-image" src="/images/icon/report1.png"></image>
+          <text class="collect-text">举报</text>
+        </view>
+      </view>
+    <button class="position-button" bindtap="joinTap">{{course.isRegister == '0' ? '咨询' : '已预约' }}</button>
+  </view>
+    <!-- 分享菜单 -->
+  <view class='menu-view' animation="{{animationData}}">  
+    <view>
+      <button class="image_button" open-type="share">
+        <image class="menu-image" src="/images/img/weixin.png"> </image>
+        <text>分享给微信好友</text>
+      </button>
+      <button class="image_button" bindtap="formSubmitShareBill">
+        <image class="menu-image" src="/images/img/pyq.png"> </image>
+        <text>生成海报分享</text>
+      </button>      
+    </view>
+    <button class='menu-button' bindtap='hideMenuModal'>取消</button>
+  </view>
+  <!-- <toast-component class="toast"></toast-component> -->
+</view>

@@ -1,0 +1,110 @@
+<view class="container">
+  <view class="tab-container">
+    <view class="tab" style="{{isTab ? 'display: none;' : ''}}">
+      <view class="swiper-tab">
+        <view
+          class="swiper-tab-item {{currentTab==0?'tab1':'tab2'}}"
+          data-current="0"
+          bindtap="clickTab"
+        >
+          找干将
+        </view>
+        <view
+          class="swiper-tab-item {{currentTab==1?'tab1':'tab2'}}"
+          data-current="1"
+          bindtap="clickTab"
+        >
+          找主公
+        </view>
+      </view>
+    </view>
+
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}" style="padding-top:50px;">
+      <view class="list">
+        <view class="none-wrap" style="{{job1.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text class="none-test">还没有添加哦~~</text>
+        </view>
+        <view class="item" wx:for="{{job1}}" wx:key="{{index}}"
+          id="{{item.id}}" bindtap="goToDetailPage" data-type="recruits">
+          <view class="item-top">
+            <view class="item-info">
+              <text class="item-info-text">职位信息：{{item.position}}</text>
+              <!-- <view class="delete-wrap">
+                <image class="delete" src="/images/icon/deleteb.png" id="{{item.id}}" data-type='job1' style="{{show == '0' ? 'display: none;' : ''}}" catchtap="delete"></image>
+              </view> -->
+            </view>
+            <view class="item-info">
+              <text class="item-info-text">单位名称：{{item.enterpriseName}}</text> 
+            </view>
+            <view class="item-info">
+              <image class="item-info-time-icon" src="/images/icon/time.png"></image>
+              <text class="item-info-text">{{item.updatedAt}}</text>
+            </view>     
+            <view class="item-info">
+              <image class="item-info-hot-icon" src="/images/icon/hot.png"></image>
+              <text class="item-info-text">{{item.hot}}</text>
+            </view>                      
+          </view>
+          <view class="item-bottom">
+            <view class="author" wx:if="{{show == 0}}">
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{userLevelInfo < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="state-button-view" wx:if="{{show == 1}}" style="padding-right:26rpx;">       
+              <text class="state" wx:if='{{item.state == 0}}'>审核中</text>
+              <text class="state" wx:elif='{{item.state == 1}}'>已发布</text>
+              <text class="state" wx:elif='{{item.state == 2}}'>未发布</text>
+              <text class="state" wx:elif='{{item.state == 3}}'>审核未通过</text>
+              <text class="state" wx:elif='{{item.state == 4}}'>违规信息</text>     
+            </view>
+          </view>
+        <view class="dividing" style="margin: 0 -30rpx;"></view>
+        </view>
+      </view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}" style="padding-top:50px;">
+      <view class="list">
+        <view class="none-wrap" style="{{job2.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text class="none-test">还没有添加哦~~</text>
+        </view>
+        <view class="item" wx:for="{{job2}}" wx:key="{{index}}"
+          id="{{item.id}}" bindtap="goToDetailPage" data-type="seekers">
+          <view class="item-top">
+            <view class="item-info">
+              <text class="item-info-text">求职意向：{{item.position}}</text>
+              <!-- <view class="delete-wrap">
+                <image class="delete" src="/images/icon/deleteb.png" id="{{item.id}}" data-type='job2' style="{{show == '0' ? 'display: none;' : ''}}" catchtap="delete"></image>
+              </view> -->
+            </view>
+            <view class="item-info">
+              <image class="item-info-time-icon" src="/images/icon/time.png"></image>
+              <text class="item-info-text">{{item.updatedAt}}</text>
+            </view>     
+            <view class="item-info">
+              <image class="item-info-hot-icon" src="/images/icon/hot.png"></image>
+              <text class="item-info-text">{{item.hot}}</text>
+            </view> 
+          </view>
+          <view class="item-bottom">
+            <view class="author" wx:if="{{show == 0}}" >
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{userLevelInfo < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="state-button-view" wx:if="{{show == 1}}" style="padding-right:26rpx;">      
+              <text class="state" wx:if='{{item.state == 0}}'>审核中</text>
+              <text class="state" wx:elif='{{item.state == 1}}'>已发布</text>
+              <text class="state" wx:elif='{{item.state == 2}}'>未发布</text>
+              <text class="state" wx:elif='{{item.state == 3}}'>审核未通过</text>
+              <text class="state" wx:elif='{{item.state == 4}}'>违规信息</text>     
+            </view>
+          </view>
+        <view class="dividing" style="margin: 0 -30rpx;"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

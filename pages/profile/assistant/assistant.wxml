@@ -1,0 +1,24 @@
+<!--pages/profile/static/owner.wxml-->
+<view class="container">
+<import src="/pages/template/template.wxml" />
+  <view class="upload">
+    <image class="upload-image" src="https://test.hanstate.com/CheerFishPictures/qr.jpg" 
+    data-src="https://test.hanstate.com/CheerFishPictures/qr.jpg" mode='widthFix' style='width:100%' bindtap='previewImage'> </image>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>名校精英小助手</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <view>
+          <text class="item-key">保存上述二维码图片，用微信扫描图片，添加名校精英微信助理入群</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <template is="gohome" class="button {{show ? 'show' : 'hidden'}}"></template>
+</view>

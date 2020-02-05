@@ -1,0 +1,28 @@
+<view class="container">
+    <view class="list">
+      <view class="none-wrap" style="{{coursesList.length < 1 ? '':'display: none;'}}">
+        <image class="none-image" src="/images/img/none.png"> </image>
+        <text class="none-test">还没有添加哦~~</text>
+      </view>
+      <view class="item" wx:for="{{coursesList}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToCoursePage">
+
+        <view class="item-top">
+          <image class="item-image" src="{{pictureHost + item.picture}}" mode='widthFix'></image>
+          <view class="item-desc">
+            <view class="item-info">
+              <text class="name">{{item.name}}</text>
+            </view>            
+            <view class="item-info">
+              <image class="item-info-author-icon" src="/images/icon/author.png"></image>
+              <text class="item-info-text">{{item.school.owner}}</text>
+            </view>
+            <view class="item-info">
+              <image class="item-info-hot-icon" src="/images/icon/hot.png"></image>
+              <text class="item-info-text">{{item.hot}}</text>
+            </view>   
+          </view>
+        </view>
+        <view class="dividing" style="margin:0 -30rpx;"></view>
+      </view>
+    </view>
+  </view>

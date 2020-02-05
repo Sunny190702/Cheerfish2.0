@@ -1,0 +1,116 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="tab-container">
+    <view class="tab">
+      <view class="swiper-tab">
+        <!-- button -->
+        <view class="swiper-tab-item {{currentTab==1?'tab1':'tab2'}}" data-current="1" bindtap="clickTab">
+          课程
+        </view>
+        <view class="swiper-tab-item {{currentTab==0?'tab1':'tab2'}}" data-current="0" bindtap="clickTab">
+          活动
+        </view>
+        <!-- <view class="swiper-tab-item {{currentTab==2?'job1':'job2'}}" data-current="2" bindtap="clickTab">
+          合作
+        </view> -->
+      </view>
+    </view>
+    <view style="">
+      <view class="{{currentTab == 0 ? 'show':'hidden'}}" style="padding-top:50px;">
+        <activity id='activity' list='{{activities}}' show='0' style="width: 100%;"></activity>
+        <view class="card-none">
+          <view class="cardview" wx:for="{{activities}}" wx:key="{{index}}"
+            id="{{item.id}}" bindtap="goToActivityPage" data-type="activity">
+            <view class="part-one">
+              <image class="image" src="{{pictureHost + item.pic}}"></image>
+            </view>
+            <view class="part-two">
+              <view class="context">
+                <text class="name">{{item.title}}</text>
+                <text class="source">主办单位：{{item.publisherInfo.school}}</text>
+              </view>
+              <view class="item-icon">
+                <view class="icon-text">
+                  <image class="icon1" src="/images/img/view.png"></image>
+                  <text class="icon-number">{{item.hot}}</text>
+                  <!-- <image class="icon2" src="/images/img/share.png"></image> -->
+                </view>
+                <button class="join" id="{{item.id}}" data-type="activity" >{{item.isRegister == '1' ? '已报名' : '报名'}}</button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="{{currentTab == 1 ? 'show':'hidden'}}" style="padding-top:50px;">
+        <courses id='courses' coursesList='{{courses}}' show='0'  style="width: 100%;"></courses>
+        <view class="card-none"  wx:for="{{courses}}" wx:key="{{index}}"
+            id="{{item.id}}" bindtap="goToCoursePage" data-type="course">
+          <view class="activity-item">
+            <view class="activity-item-top">
+              <image class="activity-item-image" src="{{pictureHost + item.picture}}"></image>
+              <view class="activity-item-desc">       <text class="activity-name">{{item.name}}</text>
+                <text class="activity-source">{{item.introduction}}</text>
+                <!-- <view class="activity-analysis">
+                  <text class="activity-number">已报名：9999人</text>
+                  <text class="activity-price">免费</text>
+                </view> -->
+                <view class="activity-item-icon">
+                  <view class="activity-icon-text">
+                    <image class="activity-icon1" src="/images/img/view.png"></image>
+                    <text class="activity-icon-number">{{item.hot}}</text>
+                    <!-- <image class="activity-icon2" src="/images/img/share.png"></image> -->
+                  </view>
+                  <!-- <button class="activity-join" id="{{item.id}}" data-type="course">{{item.isRegister == '1' ? '已预约' : '咨询'}}</button> -->
+                </view>
+              </view>
+            </view>
+            <view class="activity-item-bottom">
+              <view class="activity-author">
+                <image class="activity-author-avatar" src="/images/img/avatar.png"></image>
+                <text class="activity-author-name">发布者</text>
+                <image class="activity-author-grade" style="{{userLevelInfo < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+              </view>
+              <view class="activity-content">
+                <text class="activity-content-title">北京清华大学经济管理学院</text>
+                <text class="activity-content-time">2019.06.02</text>
+              </view>
+            </view>
+          </view>
+          <view class="dividing"></view>
+        </view>
+      </view>
+      <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+        <view class="card-none" style="display: none; flex-grow: 1;"
+            wx:for="{{partners}}" wx:key="{{index}}"
+            id="{{item.id}}" bindtap="goToPartnerPage">
+          <view class="partner-item">
+            <view class="partner-item-top">
+              <view class="partner-position">
+                <text class="partner-position-name">金融产品部评估岗</text>
+                <button class="partner-position-join">联系</button>
+              </view>
+              <view class="partner-source">
+                <text class="partner-source-dep">券商总部直招</text>
+                <text class="partner-source-line">|</text>
+                <text class="partner-source-author">主办单位</text>
+              </view>
+            </view>
+            <view class="partner-item-bottom">
+              <view class="partner-author">
+                <image class="partner-author-avatar" src="/images/img/avatar.png"></image>
+                <text class="partner-author-name">人事专员</text>
+                <image class="partner-author-grade" style="{{userLevelInfo < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+              </view>
+              <view class="partner-content">
+                <image class="partner-content-image" src="/images/img/view.png"></image>
+                <text class="partner-content-title">在看:</text>
+                <text class="partner-content-time">11</text>
+              </view>
+            </view>
+          </view>
+          <view class="dividing"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

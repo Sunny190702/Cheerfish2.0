@@ -1,0 +1,29 @@
+/* pages/home/new/new.wxss */
+@import '/pages/job/new/new.wxss';
+.tagview:first-child{
+  background-color:#fff;
+}
+.tagtext {
+  padding: 0 20rpx;
+  font-size: 12px;
+}
+.page-course-new .label {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  width: 23%;
+}
+.textarea {
+  padding-top: 30rpx;
+  color: #333333;
+  font-size: 16px;
+  min-height: 240rpx;
+  width: 100%;
+  border-bottom: 0.1rpx solid #eaeaea;
+}
+.page-course-new .flex {
+  display: flex;
+  align-items: center;
+  min-width: 300rpx;
+  justify-content: space-between;
+}

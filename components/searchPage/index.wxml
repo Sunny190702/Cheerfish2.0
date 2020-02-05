@@ -1,0 +1,14 @@
+<view name="search-container">
+  <view class="search-container" data-page="{{page}}" bindtap="searchPage">
+    <!-- <image class="search-logo" mode="scaleToFill" src="/images/navbar/logo.png"></image> -->
+    <input class="search-input" type="text" placeholder="搜索{{title}}"
+      placeholder-style="color: #333333;"	>
+      <image class="search-icon" src="/images/navbar/search1.png"></image>
+    </input>
+    <text class="search-text" bindtap="log">搜索</text>
+  </view>
+</view>
+<view class="none-wrap" style="{{noResult ? '':'display: none;'}}">
+  <image class="none-image" src="/images/img/none.png"> </image>
+  <text class="none-test">无搜索结果,换个词试试吧~</text>
+</view>

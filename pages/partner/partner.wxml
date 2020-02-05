@@ -1,0 +1,49 @@
+<!-- <import src="/pages/template/search/index.wxml" /> -->
+<view class="containers">
+  <!-- <template is="search-container" data="{{page: 'partner',  title: '合作'}}"></template> -->
+  <!-- 增加引导页 -->
+  <introduce id="introduce" class="introduce" bindtap="showAddInfo" 
+  wx:if="{{showAddInfo}}"></introduce>        
+    
+  <message id='notice'></message>
+  <search id='search' title="合作" page="partner"></search>
+  <view class="templata-box" data-type="{{type}}" bindtap="goToNewPage">
+    <view class="templata-position">
+      <image class="templata-position-image" src="/images/img/new.png"></image>
+    </view>
+  </view>
+
+  <view class="partner-container" style="margin-top: 180rpx;">
+    <view class="list">
+      <view class="item" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToDetailPage" >
+          <view class="item-top">
+            <text class="position-name" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">合作主题： {{item.enterpriseName}}<text class="title-state" wx:if="{{item.topOrder == 1}}">精选</text></text>
+            <text class="position-name" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">合作类别： <text wx:if='{{item.type == 0}}'>找资金</text>
+                <text wx:elif='{{item.type == 1}}'>找项目</text>
+                <text wx:elif='{{item.type == 2}}'>找人</text>
+                <text wx:else='{{item.type == 3}}'>其他合作</text>
+            </text>
+            <text class="position-name" style="{{item.topOrder == 1 ? 'color: #ff0000;' : 'color: #333333;' }}">发布时间： {{item.updatedAt}}</text>  
+          </view>
+
+          <view class="item-bottom">
+            <view class="author">
+              <image class="author-avatar" src="{{pictureHost + item.publisherInfo.header}}"></image>
+              <text class="author-name">{{item.publisherInfo.name}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="content">
+              <image class="content-image" src="/images/img/view.png"></image>
+              <text class="content-title">在看:</text>
+              <text class="content-time">{{item.hot}}</text>
+            </view>
+          </view>
+
+          <view class="dividing" style="margin: 0 -30rpx;"></view>
+      </view>
+    </view>
+  </view>
+  <loading hidden="{{loadingHidden}}" >
+    加载中...
+  </loading>    
+</view>

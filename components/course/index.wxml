@@ -1,0 +1,24 @@
+<view class="course">
+  <view class="none-wrap" style="{{list.length < 1 ? '':'display: none;'}}">
+    <image class="none-image" src="/images/img/none.png"> </image>
+    <text class="none-test">还没有添加哦~~</text>
+  </view>
+  <view class="course-chosen" wx:for="{{list}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToCoursePage">
+    <view class="course-chosen-image" style="background-image: url('https://test.hanstate.com/Pictures/{{item.picture}}')"></view>
+    <view class="course-chosen-desc">
+      <text class="course-chosen-desc-title">{{item.name}}</text>
+      <text class="course-chosen-desc-desc">{{item.introduction}}</text>
+      <view class="course-chosen-icon">
+        <view>
+          <image class="icon1" src="/images/img/view.png"></image>
+          <text class="course-chosen-desc-text">{{item.hot}}</text>
+          <!-- <image class="icon2" src="/images/img/share.png"></image> -->
+        </view>
+        <button id="{{item.id}}" catchtap="joinTap" data-list="2">
+          {{item.isRegister == '1' ? '已预约' : '咨询'}}
+        </button>
+      </view>
+    </view>
+    <view class="dividing" style="margin:0 -30rpx;"></view>
+  </view>
+</view>

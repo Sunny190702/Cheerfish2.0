@@ -1,0 +1,58 @@
+<view class="container">
+  <view class="college-card">
+    <loading hidden="{{loadingHidden}}" style="">
+      加载中...
+    </loading>    
+    <view class="college-card-image">
+      <image class="college-card-cover" wx:if="{{college.picture}}" src="{{pictureHost + college.picture}}"></image>
+    </view>
+    <view class="college-card-wrap">
+      <view class="college-card-card1">
+        <image class="college-card-logo" wx:if="{{college.badge}}" src="{{pictureHost+ college.badge}}"></image>
+        <view class="college-card-tit">
+          <text class="college-card-title">{{college.owner}}</text>
+          <text class="college-card-name">{{college.name}}</text>
+        </view>
+      </view>
+      <button open-type="share" class="college-card-share-wrap">
+        <image class="college-card-icon" src="/images/img/share.png"></image>
+        <text class="college-card-share">分享</text>
+      </button>
+    </view>
+    <view class="college-card-desc-wrap">
+      <text class="college-card-desc{{isOverflow ? '1' : ''}}">{{college.introduction}}</text>
+    </view>
+  </view>
+  <image class="college-card-icon1" src="/images/icon/divi.png" bindtap="showMoreDesc"></image>
+  <!-- <view class="dividing"></view> -->
+  <import src="/pages/template/template.wxml" />
+  <template is="title" data="{{title: '精选课程'}}"></template>
+  <template is="gohome"></template>
+  <view class="partner-container">
+    <view class="list">
+      <view class="card" wx:for="{{coursesList}}" wx:key="{{index}}"
+        id="{{item.id}}" bindtap="goToCoursePage">
+        <view class="cardview">
+          <view class="part-one">
+            <image class="image" wx:if="{{item.picture}}" src="{{pictureHost + item.picture}}"></image>
+            <image class="image" wx:else src="/images/default/dpartner2.png"></image>
+          </view>
+          <view class="part-two">
+            <view class="context">
+              <text class="name">{{item.name}}</text>
+              <!-- <text class="source">{{item.school.owner}}</text> -->
+            </view>
+            <view class="item-icon">
+              <view class="icon-text">
+                <image class="icon1" src="/images/img/view.png"></image>
+                <text class="icon-number">在看:{{item.hot}}</text>
+                <!-- <image class="icon2" src="/images/img/share.png"></image> -->
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <toast-component class="toast"></toast-component> -->
+</view>

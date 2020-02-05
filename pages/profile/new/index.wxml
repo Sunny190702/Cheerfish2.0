@@ -1,0 +1,34 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="tab-container">
+    <view class="tab">
+      <view class="swiper-tab">
+        <!-- button -->
+        <view class="swiper-tab-item {{currentTab==0?'tab1':'tab2'}}" data-current="0" bindtap="clickTab">
+          活动
+        </view>
+        <view class="swiper-tab-item {{currentTab==2?'tab1':'tab2'}}" data-current="2" bindtap="clickTab">
+          找人
+        </view>
+        <view class="swiper-tab-item {{currentTab==3?'tab1':'tab2'}}" data-current="3" bindtap="clickTab">
+          合作
+        </view>
+      </view>
+    </view>
+    <!-- <view> -->
+      <!-- 活动 -->
+      <view class="{{currentTab == 0 ? 'show':'hidden'}}" style="padding-top:50px;">
+        <activity id='activity' list='{{activities}}' show='1' style="width: 100%"></activity>
+      </view>
+      <!-- 找人 -->
+      <view class="{{currentTab == 2 ? 'show':'hidden'}}" style="padding-top:50px;">
+        <recruits id='recruits' job1='{{recruit}}' job2='{{seeker}}' show='1' style="width: 100%;"></recruits>
+      </view>
+      <!-- 合作 -->
+      <view class="{{currentTab == 3 ? 'show':'hidden'}}" style="padding-top:50px;">
+        <partner id='partner' list='{{cooperation}}' show='1' style="width: 100%;"></partner>
+      </view>
+    <!-- </view> -->
+  </view>
+  <template is="gohome"></template>
+</view>

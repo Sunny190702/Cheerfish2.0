@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "课程详情",
+  "usingComponents": {
+    "modal": "/components/modal/index",
+    "reguser": "/components/reguser/index",
+    "toast-component": "/components/toast/toast",
+    "ordermodal": "/components/modal/order",
+    "introduce":"/components/introduce/introduce"
+  }
+}

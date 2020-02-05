@@ -1,0 +1,25 @@
+<import src="/pages/template/template.wxml" />
+<view class="container">
+  <view class="upload">
+  <image class="upload-image" src="/images/default/dpartner2.png"> </image>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>我的邀请码
+    </text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+    <form bindsubmit="onActivityVipHandler" report-submit>
+      <view class="detail-item">
+        <view>
+          <input class='input' name='code' confirm-type="next" focus='{{focusInput}}' maxlength='6' placeholder="请输入激活码" />
+        </view>
+        <button form-type='submit' class="button show">激活</button>
+      </view>
+      </form>
+    </view>
+    <toast-component class="toast"></toast-component>
+  </view>
+</view>

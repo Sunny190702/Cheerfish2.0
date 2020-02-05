@@ -1,0 +1,108 @@
+<!--components/modal/join.wxml-->
+<view class='mask' wx:if='{{show}}'>
+      <!-- <slot></slot> -->
+  <view class='modal-content' style='height:{{height}}'>
+    <scroll-view scroll-y class='main-content'>
+      <view class="title">
+        <text class="title-info">{{title}}活动报名</text>
+        <text class="title-message">(* 请填写真实、完整信息有助于申请)</text>
+      </view>
+      <view class="course-detail-wrap">
+        <!-- <view class="detail-wrap"> -->
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>姓名
+            </label>
+
+            <input class='input' data-name='name' confirm-type="next" focus='{{focusInput}}' maxlength='20' placeholder="请输入真实姓名"  value="{{name}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>电话
+            </label>
+            <input class='input' data-name='phone' focus='{{focusInput}}' maxlength='20' confirm-type="next" placeholder="请输入手机号码" value="{{phone}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>单位
+            </label>
+            <input class='input' data-name='company' focus='{{focusInput}}' maxlength='50' confirm-type="next" placeholder="请输入单位名称" value="{{company}}" auto-height='true' bindinput="bindinput" />
+          </view>
+
+          <view class='item'>
+            <label class='label'>
+              <text class="star">*</text>职务
+            </label>
+            <input class='input' data-name='position' focus='{{focusInput}}' maxlength='50' confirm-type="next" placeholder="请输入就职职务" value="{{position}}" auto-height='true' bindinput="bindinput"  />
+          </view>
+        <!-- </view> -->
+
+        <view wx:for="{{list}}" wx:key="index" id="{{item.id}}">
+          <view class='custom-item' data-idx="{{index}}">
+            <label class='custom-label'>
+              <text class="star" wx:if="{{item.require}}">*</text>{{item.label}}
+            </label>
+            <!--文本-->
+            <!-- <input class='custom-input' data-name='{{item.label}}' focus='{{focusInput}}'  
+            confirm-type="next" placeholder="请输入" 
+            auto-height='true' 
+            bindinput="bindinput"  wx:if="{{item.type =='text'}}" 
+            data-idx="{{index}}"/> -->
+            <textarea class='custom-input' data-name='{{item.label}}' 
+              focus='{{focusInput}}'  placeholder-style='color: #cccccc'
+              confirm-type="next" placeholder="请输入" 
+              auto-height='true' maxlength='500' 
+              bindinput="bindinput"  wx:if="{{item.type =='text'}}" 
+              data-idx="{{index}}" />     
+            <!--单选-->
+            <!-- <picker class="radio" name='options' bindchange="onPickerChangeHandler" 
+            range="{{item.options}}" range-key='name' 
+             wx:if="{{item.type =='radio'}}"  data-idx="{{index}}">
+                <radio value="{{optionsIndex}}"></radio>
+                <view class="picker">{{item.options[optionsIndex].name}}</view>
+            </picker> -->
+
+            <radio-group name='options' bindchange="onPickerChangeHandler" 
+            wx:if="{{item.type =='radio'}}"  data-idx="{{index}}"
+            range-key='name' 
+            >
+                <label wx:for="{{item.options}}" wx:key="i" id="{{item.id}}">
+                  <view  class="radio">
+                    <radio value="{{item.name}}"></radio>
+                    <view>{{item.name}}</view>
+                  </view>
+                </label>   
+            </radio-group>
+        
+
+            <!--多选-->
+            <!-- <checkbox-group bindchange="checkboxChange" wx:if="{{item.type =='checkbox'}}"  data-idx="{{index}}">
+              <label wx:for="{{item.options}}" wx:key="j" id="{{item.id}}">
+                <view  class="checkbox">
+                  <checkbox value="{{item.name}}" checked="{{item.checked}}" >{{item.name}}</checkbox>
+                </view>
+              </label>
+            </checkbox-group>      -->
+
+            <checkbox-group bindchange="checkboxChange" wx:if="{{item.type =='checkbox'}}"  data-idx="{{index}}">
+              <label  wx:for="{{item.options}}" wx:key="j" id="{{item.id}}">
+                  <view class="checkbox">
+                  <checkbox value="{{item.name}}"></checkbox>
+                  <view>{{item.name}}</view>
+                  </view>
+              </label>   
+            </checkbox-group>
+          </view>
+        </view>       
+         
+      </view>
+    </scroll-view>
+    <text class="title-info" style="font-size: 12px; padding-top:20px;padding-bottom:10px">主办方拥有最终解释权</text>
+    <view class='modal-btn-wrapper'>
+      <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' catchtap='cancel'>取消</view>
+      <view class='confirm-btn' style='color:#13b5f5' catchtap='confirm'>报名</view>
+    </view>
+  </view>
+</view>

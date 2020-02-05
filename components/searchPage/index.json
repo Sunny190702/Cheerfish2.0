@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "recruits": "/components/recruits/index",
+    "partner": "/components/partner/index",
+    "activity": "/components/activity/index",
+    "courses": "/components/courses/index"
+  }
+}

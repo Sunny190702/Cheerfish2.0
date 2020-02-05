@@ -1,0 +1,48 @@
+.college-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15rpx 30rpx;
+  /* align-items: center;*/
+  /* border-top: 2px solid #f0f3f8; */
+  justify-content: space-between;
+}
+
+.college {
+  width: 48%;
+  height: 150rpx;
+  display: flex;
+  background-color: #fafafa;
+  margin-bottom: 20rpx;
+  align-items: center;
+}
+
+.image {
+  padding-left: 20rpx;
+  padding-right: 10rpx;
+}
+.college-image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 20rpx;
+  /* flex-shrink: 0; */
+  /* justify-content: center; */
+}
+
+.name {
+  font-size: 14px;
+  color: #585858;
+}
+
+.title {
+  font-size: 12px;
+  margin-bottom: 10rpx;
+  color: #999999;
+}
+

@@ -1,0 +1,137 @@
+<import src="/pages/template/loading/index.wxml" />
+<view class="containers">
+  <loading hidden="{{loadingHidden}}" style="">
+    加载中...
+  </loading>    
+  <view>
+  <!-- <template is="loading" /> -->
+  </view>
+  <!-- <template is="new" data="{{currentTab}}"></template> -->
+  <view class="container">
+    <view class="tab">
+      <view class="swiper-tab">
+        <view
+          class="swiper-tab-item {{currentTab==0?'follow':'hot'}}"
+          data-current="0"
+          bindtap="clickTab"
+        >
+          我关注的
+          <view wx:if="{{currentTab==0}}" class="tab-bottom-divider"></view>
+        </view>
+        <view
+          class="swiper-tab-item {{currentTab==1?'follow':'hot'}}"
+          data-current="1"
+          bindtap="clickTab"
+        >
+          热点推荐
+          <view wx:if="{{currentTab==1}}" class="tab-bottom-divider"></view>
+        </view>
+      </view>
+    </view>
+    <!-- item -->
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}" style="padding-top:110rpx;">
+      <view class="join-wrap" style="flex-direction: column;">
+        <view class="join-wrap-head" data-id="{{itemId}}" data-type="{{type}}" data-identity="{{identity}}" style="width: 100%;">
+          <view  wx:for="{{groupList}}" wx:key="{{index}}" id="{{item.id}}" bindtap="goToGroupHome" data-groupid="{{item.id}}">
+            <image class="group-image" src="{{pictureHost + item.thumbnail}}"></image>
+            <text class="group-name">{{item.name}}</text>
+          </view>
+        </view>
+        <view class="join-wrap-statistics" bindtap='goToGroupList'>
+          <text class="join-wrap-statistics-text">查看更多</text>
+        </view>
+      </view>
+      <view class="list-item-top-divider"></view>
+      <view class="none-wrap" style="{{followList.length < 1 ? '':'display: none;'}}">
+          <image class="none-image" src="/images/img/none.png"> </image>
+          <text>没有关注的小圈哦~~</text>
+          <text bindtap="goToGroupList" style="font-size: 14px;color: #017be1;">快去关注吧</text>
+      </view>
+      <view class="item" wx:for="{{followList}}" wx:key="{{index}}"
+        id="{{index}}" bindtap="goToDetailPage"  data-type="{{item.category}}" 
+        data-id="{{item.infoId}}" 
+        style="{{item.topOrder == 1 ? 'border: 1px solid #00519f;' : '' }}"
+        >
+        <view class="item-top">
+          <view class="author" catchtap='goToGroupHome' data-groupid="{{item.groupId}}">
+            <image class="author-avatar-m" src="{{pictureHost + item.groupHeader}}"></image>
+            <view class="author-item-info">
+              <view class="author">
+                <text class="author-name">{{item.groupName}}</text>                
+              </view>
+              <text class="update">{{item.updatedAt}}</text>
+            </view>
+          </view>        
+        </view>
+        <view class="item-info">
+            <view class="item-title">
+              <text class="item-title-info"><text class="activity-state" style="{{item.isActive == '0' ? '':'display: none;'}}; ">已结束</text>{{item.title}}</text>
+              <view>
+                <text class="item-type" wx:if='{{item.category == 1}}'>活动</text>
+                <text class="item-type" wx:elif='{{item.category == 2}}'>招聘</text>
+                <text class="item-type" wx:elif='{{item.category == 3}}'>求职</text>
+                <text class="item-type" wx:elif='{{item.category == 4}}'>合作</text>
+                <text class="item-type" wx:else='{{item.category == 5}}'>课程</text>
+              </view>
+            </view>
+            <image class="item-image" wx:if="{{item.pic}}" src='{{pictureHost + item.pic}}' mode='aspectFill top'> </image>
+        </view>          
+        <view class="item-bottom">
+          <view class="author" style="width:78%;">
+            <image class="author-avatar" src="{{pictureHost + item.userHeader}}"></image>
+            <text class="author-name" style="max-width: 80%;">{{item.userName}}</text>
+            <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+          </view>
+          <view class="content">
+            <image class="views-icon" src="/images/img/view.png"></image>
+            <!-- <text class="views-title">在看:</text> -->
+            <text class="views-count">{{item.hot}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}" style="padding-top:100rpx;">
+        <view class="item" wx:for="{{hotList}}" wx:key="{{index}}"
+          id="{{index}}" bindtap="goToDetailPage" data-type="{{item.category}}" 
+          data-id="{{item.infoId}}" 
+          style="{{item.topOrder == 1 ? 'border: 1px solid #00519f;' : '' }}">
+          <view class="item-top">
+            <view class="author"  catchtap='goToGroupHome'  data-groupid="{{item.groupId}}">
+              <image class="author-avatar-m" src="{{pictureHost + item.groupHeader}}"></image>
+              <view class="author-item-info">
+                <view class="author">
+                  <text class="author-name">{{item.groupName}}</text>
+                </view>
+                <text class="update">{{item.updatedAt}}</text>
+              </view>
+            </view>        
+          </view>
+          <view class="item-info">     
+              <view class="item-title">
+                <text class="item-title-info"><text class="activity-state" style="{{item.isActive == '0' ? '':'display: none;'}}; ">已结束</text>{{item.title}}</text>
+                <view>
+                  <text class="item-type" wx:if='{{item.category == 1}}'>活动</text>
+                  <text class="item-type" wx:elif='{{item.category == 2}}'>招聘</text>
+                  <text class="item-type" wx:elif='{{item.category == 3}}'>求职</text>
+                  <text class="item-type" wx:elif='{{item.category == 4}}'>合作</text>
+                  <text class="item-type" wx:else='{{item.category == 5}}'>课程</text>
+                </view>
+              </view>
+              <image class="item-image" wx:if="{{item.pic}}" src='{{pictureHost + item.pic}}' mode='aspectFill'> </image>              
+          </view>          
+          <view class="item-bottom">
+            <view class="author" style="width:78%;">
+              <image class="author-avatar" src="{{pictureHost + item.userHeader}}"></image>
+              <text class="author-name" style="max-width: 80%;">{{item.userName}}</text>
+              <image class="author-grade" style="{{item.publisherInfo.accountLevel < 2 ? 'display: none;' : ''}}"   src="/images/default/VIP.png"></image>
+            </view>
+            <view class="views">
+              <image class="views-icon" src="/images/img/view.png"></image>
+              <!-- <text class="views-title">在看:</text> -->
+              <text class="views-count">{{item.hot}}</text>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

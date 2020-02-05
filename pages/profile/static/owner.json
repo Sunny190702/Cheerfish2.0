@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "名校精英",
+  "usingComponents": {
+    "toast-component": "/components/toast/toast"
+  }
+}

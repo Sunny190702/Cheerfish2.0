@@ -1,0 +1,3 @@
+/* pages/partner/detail/detail_under.wxss */
+@import "/pages/template/template.wxss";
+@import "/pages/partner/detail/detail.wxss";

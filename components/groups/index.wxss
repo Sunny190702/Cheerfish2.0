@@ -1,0 +1,24 @@
+/* components/groups/index.wxss */
+@import "/pages/template/template.wxss";
+@import "/pages/homepage/groups.wxss";
+.list {
+  padding-bottom:100px;
+  margin-top: 10rpx;
+}
+.none-wrap {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.none-wrap image {
+  height: 270rpx;
+  width: 320rpx;
+}
+.none-wrap text {
+  font-size: 14px;
+  color: #999999;
+  padding-top: 50rpx;
+}

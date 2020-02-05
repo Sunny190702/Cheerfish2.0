@@ -1,0 +1,99 @@
+/* pages/homepage/createGroup.wxss */
+.message-card {
+  padding: 60rpx 30rpx;
+}
+.message-card  .item {
+  display: flex;
+  padding: 30rpx 0;
+  align-items: center;
+  border-bottom: 0.1rpx solid #eaeaea;
+  justify-content: space-between;
+}
+.label {
+  font-size: 14px;
+  color: #333333;
+  width: 120rpx;
+}
+.star {
+  color: red;
+  padding-right: 15rpx;
+}
+.input {
+  padding-left: 47rpx;
+  color: #333333;
+  flex-grow: 1;
+  font-size: 14px;
+}
+.textarea {
+  color: #333333;
+  font-size: 14px;
+  height: 500rpx;
+  padding-left: 60rpx;
+}
+.btn-wrap {
+  margin: 30px 50px;
+  padding: 20rpx 0 60rpx 0;
+}
+.btn {
+  color: #ffffff;
+  font-size: 32rpx;
+  background: #0178dd;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50px;
+}
+.upload-content-bg {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.background-image{
+  height : 100%;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+.content{
+  position: absolute;
+  width: 100%;
+  height: 400rpx;
+  left: 0px;
+  top: 0px;
+  background-color: #ff0;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  align-items: center;
+}
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 100%;
+  justify-content: center;
+  z-index: 10;
+}
+.upload-bg {
+  width: 100px;
+  height: 86px;
+  border-radius: 5px;
+  background-color: #fff;
+  align-self: center;
+  margin-top:35px;
+}
+.upload-bg-icon {
+  height: 69rpx;
+  width: 75rpx;
+  margin-top:-60px;
+  justify-content: center;
+  align-self: center;
+}
+.upload-text {
+  font-size: 16px;
+  color: #fff;
+  margin-top:35px;
+  text-align: center;
+}
+

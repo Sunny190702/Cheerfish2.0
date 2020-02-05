@@ -1,0 +1,5 @@
+<!--components/introduce/index.wxml-->
+<!--components/introduce/introduce.wxml-->
+<view class="guide-view"  wx:if="{{show}}">
+    <image src='/images/default/ic_addinfo.jpg' style='height: 100%;width: 100%;'></image>
+</view>

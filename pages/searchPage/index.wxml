@@ -1,0 +1,51 @@
+ <view class="container">
+  <view name="search-container">
+    <view class="search-container" data-page="{{page}}">
+      <!-- <image class="search-logo" mode="scaleToFill" src="/images/navbar/logo.png"></image> -->
+      <!-- <input class="search-input" type="text" bindinput="log1" placeholder="搜索{{title}}" placeholder-style="color: #333333;" bindconfirm="handleConfirm" confirm-type="search"> -->
+      <input class="search-input" type="text" bindinput="log1" placeholder="{{title}}" placeholder-style="color: #333333;">
+        <image class="search-icon" src="/images/navbar/search1.png"></image>
+      </input>
+      <text class="search-text" bindtap="searchPage">搜索</text>
+    </view>
+  </view>
+  <!-- <view class="history-wrap" style="{{history ? '':'display: none;'}}">
+    <view style="font-size: 14px;padding-top: 20rpx;">搜索历史</view>
+    <view wx:for="{{sercherStorage}}" wx:key="item.id" class="liclass" style="color:#9E9E9E;font-size:26rpx;">
+      <view id="{{item.id}}" bindtap="tapSercherStorage">
+        <text style="width:100rpx">{{item.name}}</text>
+      </view>
+    </view>
+    <view wx:if="{{sercherStorage.length!==0}}" style="text-align:center;padding-top: 30rpx;" bindtap="clearSearchStorage">
+      <view class="history-span">清除历史记录</view>
+    </view>
+  </view> -->
+  <view class="history-wrap" style="{{history ? '':'display: none;'}}">
+    <view class="none-wrap">
+      <image class="none-image" src="/images/img/none.png"></image>
+      <text class="none-test">开始你的搜索吧~~</text>
+    </view> 
+  </view> 
+  <view class="none-wrap" style="{{noResult ? '':'display: none;'}}">
+    <image class="none-image" src="/images/img/none.png"></image>
+    <text class="none-test">无搜索结果,换个词试试吧~</text>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'activity' ? '' : 'display: none;'}}">
+    <activity id='activity' list='{{activities}}' show='0'></activity>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'course' ? '' : 'display: none;'}}">
+    <courses id='courses' coursesList='{{courses}}' show='0'></courses>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'recruits' || showWrap == 'seekers' ? '' : 'display: none;'}}">
+    <recruits id='recruits' show='0' job1='{{recruit}}' job2='{{seeker}}' currentTab="{{showWrap == 'recruits' ? 0 : 1}}" isTab="true"></recruits>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'partner' ? '' : 'display: none;'}}">
+    <partner id='partner' list='{{cooperation}}' show='0'></partner>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'college' ? '' : 'display: none;'}}">
+    <college id='college' collegeArray='{{collegeArray}}'></college>
+  </view>
+  <view class="resultwrap" style="{{showWrap == 'groups' ? '' : 'display: none;'}}">
+    <groups id='groups' list='{{groups}}'></groups>
+  </view>  
+</view>

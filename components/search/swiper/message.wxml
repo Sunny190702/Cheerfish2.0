@@ -1,0 +1,15 @@
+<view class="search-container">
+  <view class="swiper-box">
+    <text class="swiper-text">公告</text>
+    <image class="swiper-icon" src="/images/icon/message.png"></image>
+    <view class="message_swiper">
+      <swiper class="message_swiper_container" vertical="true" autoplay="true" circular="true" interval="5000">
+        <block wx:for="{{msgList}}" wx:key="key">
+            <swiper-item>
+              <text class="message_swiper_item">{{item.content}}</text>
+            </swiper-item>
+        </block>
+      </swiper>   
+    </view>
+  </view>
+</view>

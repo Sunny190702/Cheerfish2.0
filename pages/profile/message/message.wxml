@@ -1,0 +1,37 @@
+<!--pages/profile/message/message.wxml-->
+<view class="container">
+    <view class="setting-two">
+      <view class="setting-item" bindtap="toMenuForBlance" data-type="6">
+        <view class="item-text">
+          <image class="item-image" src="/images/img/mycode.png"></image>
+          <text class="setting-text">鱼币规则</text>
+        </view>
+      </view>
+      <view class="setting-item" bindtap="toMenuForModelInfo">
+        <view class="item-text">
+          <image class="item-image" src="/images/img/mycode.png"></image>
+          <text class="setting-text">订阅消息</text>
+        </view>
+      </view>      
+      <view class="setting-item" bindtap="toMenuForPrivacy" data-type="2">
+        <view class="item-text">
+          <image class="item-image" src="/images/img/myauthor.png"></image>
+          <text class="setting-text">隐私政策</text>
+        </view>
+      </view>
+      <view class="setting-item" bindtap="toMenuForService" data-type="3">
+        <view class="item-text">
+          <image class="item-image" src="/images/img/myauthor.png"></image>
+          <text class="setting-text">服务协议</text>
+        </view>
+      </view>
+      <!-- <view class="setting-item">
+        <button class="item-button" open-type="contact" style="display:flex; flex-direction:row;">
+          <view style="justify-content: flex-start;display: flex;align-items: center;" >
+            <image class="item-image" src="/images/img/mycontact.png"></image>
+          </view>
+          <text class="setting-text">联系客服</text>
+        </button>
+      </view>   -->
+    </view>
+</view>

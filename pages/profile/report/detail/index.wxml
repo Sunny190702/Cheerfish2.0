@@ -1,0 +1,38 @@
+<!-- <import src="../template/template.wxml" /> -->
+<view class="container">
+  <view class="container">
+    <view class="upload">
+      <image class="upload-image" src="/images/default/dpartner.png"> </image>
+    </view>
+  </view>
+  <view class="templata-title">
+    <image src="/images/img/left.png"></image>
+    <text>举报详情</text>
+    <image src="/images/img/right.png"></image>
+  </view>
+  <view class="course-detail-wrap">
+    <view class="detail-wrap">
+      <view class="detail-item">
+        <text class="item-key">举报进程:</text>
+        <text class="item-value">{{item.result}}</text>
+      </view>
+      <view class="detail-item">
+        <text class="item-key">举报标题:</text>
+        <text class="item-value">{{item.title}}</text>
+      </view>
+      <!-- <view class="detail-item">
+        <text class="item-key">举报类别:</text>
+        <text class="item-value">{{item.type}}</text>
+      </view> -->
+      <view class="detail-item">
+        <text class="item-key">举报内容:</text>
+        <text class="item-value">{{item.content}}</text>
+      </view>
+    </view>
+    <view class="auth">
+      <text>举报者拥有最终解释权</text>
+    </view>
+  </view>
+  <import src="/pages/template/template.wxml" />
+  <template is="gohome"></template>
+</view>

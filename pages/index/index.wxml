@@ -1,0 +1,11 @@
+<view class='modal-wrap' wx:if="{{showLogin}}">
+  <view class='modal'>
+    <view class='logo-box'>
+          <image class='logo' mode="{{item.mode}}" src="/images/ic_author_logo.png"></image>
+          <view class="info_titile">登陆名校精英</view>
+          <view class="info_content">从优秀到卓越</view>
+    </view>
+    <button class='modal-btn' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>授权登录</button>
+  </view>
+  <toast-component class="toast"></toast-component>
+</view>

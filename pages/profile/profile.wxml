@@ -1,0 +1,83 @@
+  <view class="container">
+    <view class="upload-content" bindtap="onEditHandler">
+      <view class="upload-content-view">
+        <image class="upload-bg"   src="{{header ? header : '/images/ic_author_logo.png'}}" />
+        <view class="upload-content-info">
+          <view class="upload-content-name">
+            <text class="banner-card-title" wx:if='{{name}}'>{{name}}</text>
+            <text class="banner-card-title" wx:else>游客</text>
+            <image class="author-grade" src="/images/default/VIP.png" wx:if="{{vipFlag}}"></image>
+          </view>
+          <view class="integral">
+            <image class="balance-icon" src="/images/icon/balance.png" />
+            <text class="integral-text">鱼币: </text>
+            <text class="integral-number"> {{blance}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='info-card-button' style='justify-content:center;'> 
+        <text class="info-button" bindtap="onAuthorizeHandler"  
+        wx:if="{{unAuthorized}}">点击授权</text>
+        <text class="info-button" bindtap="onAuthenticationHandler"  
+        wx:elif="{{!unAuthorized &&needAuthentication}}">完善信息</text>
+        <!-- <image class="vip-button" src="/images/img/govip.png" bindtap="onUpgradeVipHandler"  wx:elif="{{!unAuthorized&&!needAuthentication && !vipFlag }}"/>                 -->
+        <image class="vip-button" src="/images/img/govip.png" bindtap="onUpgradeVipHandler" wx:elif="{{!unAuthorized&&!needAuthentication && !vipFlag }}"/>    
+      </view>        
+    </view>     
+      
+    <!-- <view class="upload-content-bg"> -->
+      <image class='background-image' src='/images/user/banner1.png' mode='widthFix'></image>
+    <!-- </view> -->
+  </view> 
+
+  <view class="my-info-card">
+    <view class="myinfo1" bindtap='goToNewPage' data-type="new">
+      <image class="release-image" src="/images/img/myrelease.png"></image>
+      <text class="myrelease">我的发布</text>
+    </view>
+    <view class="myinfo1" bindtap="goToJoinPage" data-type="new">
+      <image class="release-image" src="/images/img/myjoin.png"></image>
+      <text class="myrelease">我的报名</text>
+    </view>
+    <view class="myinfo1" bindtap="goToCollectPage" data-type="collect">
+      <image class="release-image" src="/images/img/mycollect.png"></image>
+      <text class="myrelease">我的收藏</text>
+    </view>
+    <view class="myinfo1" bindtap="goToMyJoinGroupPage" data-type="groups">
+      <image class="release-image" src="/images/img/mygroup.png"></image>
+      <text class="myrelease">我的圈子</text>
+    </view>      
+  </view>
+  <view class="setting-one">
+    <view class="setting-item">
+      <button class="item-button" open-type="share" style="display:flex; flex-direction:row;">
+        <view style="justify-content: flex-start;display: flex;align-items: center;" >
+          <image class="item-image" src="/images/img/myshare.png"></image>
+        </view>
+        <text class="setting-text">推荐给好友</text>
+      </button>
+    </view>  
+    <view class="setting-item">
+      <view class="item-text" bindtap="goToReportPage">
+        <image class="item-image" src="/images/img/myreport.png"></image>
+        <text class="setting-text">我的举报</text>
+      </view>
+    </view>    
+    <view class="setting-item">
+        <button class="item-button" open-type="contact" style="display:flex; flex-direction:row;">
+          <view style="justify-content: flex-start;display: flex;align-items: center;" >
+            <image class="item-image" src="/images/img/mycontact.png"></image>
+          </view>
+          <text class="setting-text">联系客服</text>
+        </button>
+    </view>          
+
+  </view>
+  <view class="setting-two">
+    <view class="setting-item" bindtap="toMenuMore" data-type="6">
+      <view class="item-text">
+        <image class="item-image" src="/images/img/mycode.png"></image>
+        <text class="setting-text">更多设置</text>
+      </view>
+    </view>
+  </view> 
